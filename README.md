@@ -102,11 +102,12 @@ Sidan är designad för minimal attackyta:
   Pages ger ändå HTTPS automatiskt, vilket täcker det viktigaste.
 
 ## Byta ut platshållar-innehåll
-- **Foto:** Hero-sektionen använder en initial-baserad grafik istället för
-  foto (`hero-visual` i `index.html`). Vill du lägga in ett riktigt foto,
-  lägg filen i `assets/img/`, och byt ut `<div class="hero-visual">`-blocket
-  mot en `<img>`-tagg (kom ihåg `alt`-text och rimlig filstorlek, gärna
-  WebP för snabb laddning).
+- **Foto:** Hero-sektionen är kopplad till `assets/img/portrait.jpg` — lägg
+  bildfilen där (exakt det filnamnet) så dyker den upp automatiskt, beskuren
+  till en rundad kvadrat med en lätt ramdetalj bakom. Saknas filen visas
+  initial-grafiken ("IN") som fallback istället för en trasig bild-ikon.
+  Rimlig storlek: kvadratisk eller stående beskärning, minst ~800×800px,
+  komprimerad till under ~300 KB (t.ex. via [squoosh.app](https://squoosh.app)).
 - **CV:** ligger i `assets/cv/`. Ersätt filerna när du uppdaterar ditt CV
   (behåll samma filnamn så slipper du ändra kod).
 

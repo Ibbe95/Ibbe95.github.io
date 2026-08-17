@@ -102,12 +102,10 @@ Sidan är designad för minimal attackyta:
   Pages ger ändå HTTPS automatiskt, vilket täcker det viktigaste.
 
 ## Byta ut platshållar-innehåll
-- **Foto:** Hero-sektionen är kopplad till `assets/img/portrait.jpg` — lägg
-  bildfilen där (exakt det filnamnet) så dyker den upp automatiskt, beskuren
-  till en rundad kvadrat med en lätt ramdetalj bakom. Saknas filen visas
-  initial-grafiken ("IN") som fallback istället för en trasig bild-ikon.
-  Rimlig storlek: kvadratisk eller stående beskärning, minst ~800×800px,
-  komprimerad till under ~300 KB (t.ex. via [squoosh.app](https://squoosh.app)).
+- **Hero-panelen:** visar en LinkedIn-kontaktkort istället för foto (medvetet
+  val — se `.hero-linkedin` i `index.html`/`style.css`). Länken pekar mot
+  `https://www.linkedin.com/in/ibrahim-njie-68446817b/`. `assets/img/`
+  används inte längre av sidan (favicon.svg undantaget).
 - **CV:** ligger i `assets/cv/`. Ersätt filerna när du uppdaterar ditt CV
   (behåll samma filnamn så slipper du ändra kod).
 

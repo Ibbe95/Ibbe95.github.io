@@ -608,9 +608,9 @@ main {
   color: var(--accent);
 }
 
-/* Hero visual panel: real photo when present, initials as graceful fallback.
-   A single offset rule (not a gradient glow or dashed ring) — closer to a
-   frame around a filed photograph than an app icon. */
+/* Hero visual panel: a LinkedIn callout card, framed with a single offset
+   rule (not a gradient glow or dashed ring) — closer to an index card than
+   an app icon. */
 .hero-visual-wrap {
   position: relative;
   max-width: 360px;
@@ -634,38 +634,64 @@ main {
   overflow: hidden;
 }
 
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 12%;
-  /* subtle desaturation instead of a colourful photo next to muted ink type
-     — reads as considered, not as a random snapshot */
-  filter: grayscale(12%) contrast(1.02);
+.hero-linkedin {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
 }
 
-.hero-visual .initials {
-  position: absolute;
-  inset: 0;
-  display: none;
-  place-items: center;
+.hero-linkedin:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.hero-linkedin-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.hero-linkedin-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent);
+  margin-top: auto;
+}
+
+.hero-linkedin-name {
+  margin-top: 0.9rem;
   font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 6.5rem);
+  font-size: 1.9rem;
   font-weight: 600;
-  font-style: italic;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+}
+
+.hero-linkedin-sub {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 22ch;
+}
+
+.hero-linkedin-cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.92rem;
   color: var(--accent);
 }
 
-/* Shown only when the photo fails to load (e.g. before portrait.jpg exists) */
-.hero-visual.photo-missing .hero-photo {
-  display: none;
-}
-
-.hero-visual.photo-missing .initials {
-  display: grid;
+.hero-linkedin-cta svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 /* ---------- Stats strip ---------------------------------------------- */

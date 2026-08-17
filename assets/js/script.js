@@ -40,6 +40,9 @@
       "hero.meta.location": "Stockholm, Sverige",
       "hero.meta.lang": "Svenska & engelska",
       "hero.meta.cert": "PSM I-certifierad",
+      "hero.linkedin.label": "Kontakt",
+      "hero.linkedin.sub": "Fullständig profil, rekommendationer & nätverk",
+      "hero.linkedin.cta": "Se profil",
 
       "stats.people.value": "28",
       "stats.people.label": "personer i gruppen “Operativ säkerhet” fick ny Kanban-styrning",
@@ -247,6 +250,9 @@
       "hero.meta.location": "Stockholm, Sweden",
       "hero.meta.lang": "Swedish & English",
       "hero.meta.cert": "PSM I certified",
+      "hero.linkedin.label": "Connect",
+      "hero.linkedin.sub": "Full profile, recommendations & network",
+      "hero.linkedin.cta": "View profile",
 
       "stats.people.value": "28",
       "stats.people.label": "people in the “Operational Security” group under new Kanban governance",
@@ -506,22 +512,6 @@
   }
 
   /* ----------------------------------------------------------------
-   * Hero photo: fall back to the initials graphic if portrait.jpg
-   * hasn't been added to assets/img/ yet (or fails to load).
-   * ------------------------------------------------------------- */
-  function initHeroPhoto() {
-    const photo = document.querySelector(".hero-photo");
-    const visual = document.querySelector(".hero-visual");
-    if (!photo || !visual) return;
-
-    if (photo.complete && photo.naturalWidth === 0) {
-      visual.classList.add("photo-missing");
-    }
-    photo.addEventListener("error", () => visual.classList.add("photo-missing"));
-    photo.addEventListener("load", () => visual.classList.remove("photo-missing"));
-  }
-
-  /* ----------------------------------------------------------------
    * Mobile nav
    * ------------------------------------------------------------- */
   function initMobileNav() {
@@ -703,7 +693,6 @@
     initTheme();
     applyLang(getLang());
     initControls();
-    initHeroPhoto();
     initMobileNav();
     initScrollSpy();
     initReveal();

@@ -9,10 +9,11 @@
   <meta name="theme-color" content="#060910" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <!-- Security: strict Content-Security-Policy. Zero external scripts/styles/fonts;
-       the only cross-origin request this page ever makes is the optional contact-form
-       POST to Web3Forms, explicitly allow-listed below. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com" />
+  <!-- Security: strict Content-Security-Policy. Only two cross-origin
+       exceptions: the optional contact-form POST to Web3Forms, and the
+       Cloudflare Web Analytics beacon (cookie-free, no fingerprinting,
+       no personal data — see the About section for the full explanation). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' https://static.cloudflareinsights.com; font-src 'self'; form-action 'self' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
@@ -24,7 +25,14 @@
   <link rel="canonical" href="https://ibrahimnjie.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="assets/css/style.css?v=19" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20" />
+
+  <!-- Cloudflare Web Analytics: cookie-free, no fingerprinting, no personal
+       data collected — see https://www.cloudflare.com/web-analytics/.
+       Get your own token free at dash.cloudflare.com → Analytics & Logs →
+       Web Analytics → Add a site, then replace REPLACE_WITH_CF_BEACON_TOKEN
+       below. Until replaced, this script simply won't send anything. -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CF_BEACON_TOKEN"}'></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="nav.skipToContent">Skip to content</a>
@@ -176,7 +184,7 @@
           </div>
           <p class="privacy-note">
             <svg aria-hidden="true"><use href="#icon-lock"/></svg>
-            <span data-i18n="about.privacy">This site is fully static, uses no third-party tracking or analytics, and loads no external fonts or scripts — only what's needed to display the page and, if you choose to send it, deliver the contact form.</span>
+            <span data-i18n="about.privacy">This site is fully static and loads no external fonts. The only measurement is a cookie-free, GDPR-friendly visit counter (Cloudflare Web Analytics) with no personal data or cross-site tracking — plus, if you choose to send it, delivery of the contact form.</span>
           </p>
         </div>
 
@@ -255,7 +263,7 @@
               <p class="company" data-i18n="exp.1.company">Trafikförvaltningen, Region Stockholm</p>
               <ul>
                 <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b1">Coordinated initiatives within IAM, IGA, and identity security in one of Sweden's most complex, society-critical IT environments</span></li>
-                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b2">Led workshops, demos, retrospectives, and project manager forums</span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b2">Forum lead for all 12 project managers within the Infrastructure &amp; Platforms section – facilitated peer knowledge-sharing and improvement plans between PMs, and optimized onboarding for new PMs; also ran workshops, demos, and retrospectives</span></li>
                 <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b3">Owned the Kanban board and follow-up responsibility in Jira/Atlassian for the entire &ldquo;Operational Security&rdquo; group — 28 people across 5 teams; migrated planning from PowerPoint to a dynamic Atlassian view; introduced Definition of Ready (DoR) and Definition of Done (DoD)</span></li>
                 <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b4">Coordinated between IT, security, business, architects, and external suppliers</span></li>
                 <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b5">Took part in strategic initiatives around sourcing, RFI processes, and requirements work</span></li>
@@ -313,6 +321,9 @@
           <article class="project-card">
             <span class="project-tag" data-i18n="projects.1.tag">Strategic insourcing</span>
             <h3 data-i18n="projects.1.title">Taking Back Control (&ldquo;Egen r&aring;dighet&rdquo;) — IAM, IGA &amp; IDP Insourcing</h3>
+            <p class="project-scope">
+              <span class="project-scope-item"><strong data-i18n="projects.budget.value">25&ndash;50M SEK</strong> <span data-i18n="projects.budget.label">project budget scope</span></span>
+            </p>
             <div class="project-body">
               <p data-i18n="projects.1.s">Situation: Trafikförvaltningen's IAM, IGA, and IDP (both public and internal identity platform) were managed by an external supplier — limited in-house control and exposure to vendor-driven change.</p>
               <p data-i18n="projects.1.a">Action: Took part in the large-scale insourcing project — contributed to public procurements and RFI processes, traditional project management with dependencies across stakeholders organization-wide, budgeting, risk analyses, project specifications, architecture, records management, status reporting, and requirements management, all within the frame of NIS2 and GDPR.</p>
@@ -344,7 +355,10 @@
           <article class="project-card">
             <span class="project-tag" data-i18n="projects.3.tag">Data quality &amp; traceability</span>
             <h3 data-i18n="projects.3.title">&ldquo;Identitetsregister&rdquo; — Identity Register Consolidation</h3>
-            <p class="project-scope"><strong data-i18n="projects.3.scope.value">30,000+</strong> <span data-i18n="projects.3.scope.label">human &amp; non-human identities, fragmented across many systems</span></p>
+            <p class="project-scope">
+              <span class="project-scope-item"><strong data-i18n="projects.3.scope.value">30,000+</strong> <span data-i18n="projects.3.scope.label">human &amp; non-human identities</span></span>
+              <span class="project-scope-item"><strong data-i18n="projects.budget.value">25&ndash;50M SEK</strong> <span data-i18n="projects.budget.label">project budget scope</span></span>
+            </p>
             <div class="project-body">
               <p data-i18n="projects.3.s">Situation: Roughly 30,000 identities — human and non-human — were, and to some extent still are, fragmented across many different systems within Trafikförvaltningen and among partners, subcontractors, and transport operators, making oversight and traceability difficult.</p>
               <p data-i18n="projects.3.a">Action: Contributed to a large-scale project consolidating these into a shared identity register, with a focus on security, traceability, and data quality across the entire ecosystem of parties.</p>
@@ -625,6 +639,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js?v=19"></script>
+  <script src="assets/js/script.js?v=20"></script>
 </body>
 </html>

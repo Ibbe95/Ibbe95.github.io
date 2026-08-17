@@ -1097,6 +1097,12 @@ main {
 .project-scope {
   margin-top: 0.6rem;
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.project-scope-item {
+  display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -1104,7 +1110,7 @@ main {
   color: var(--text-muted);
 }
 
-.project-scope strong {
+.project-scope-item strong {
   font-family: var(--font-mono);
   font-size: 1.05rem;
   font-weight: 700;
@@ -1144,6 +1150,29 @@ main {
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border);
+}
+
+/* Long tail of a tools group, hidden until "show more" is toggled. Stays in
+   the DOM either way — a search-engine crawler or Ctrl+F still finds it,
+   only the *visual* wall-of-chips is trimmed. */
+.chip--extra {
+  display: none;
+}
+
+.chip-row.expanded .chip--extra {
+  display: inline-block;
+}
+
+.chip-toggle {
+  border-style: dashed;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.chip-toggle:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
 }
 
 /* ---------- Certifications / education ----------------------------------- */

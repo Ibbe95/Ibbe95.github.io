@@ -60,7 +60,7 @@
       "about.body2":
         "Leder workshops, DEMOs och retrospectives i agila team, och kompletterar praktisk projektledarerfarenhet med en YH-examen i IT-projektledning och en Professional Scrum Master-certifiering (PSM I).",
       "about.privacy":
-        "Den här sidan är helt statisk, använder ingen spårning/analys från tredje part och laddar inga externa typsnitt eller skript — bara det som krävs för att visa sidan och (om du väljer att skicka meddelandet) leverera kontaktformuläret.",
+        "Den här sidan är helt statisk och laddar inga externa typsnitt. Den enda mätningen är en kakfri, GDPR-anpassad besöksräknare (Cloudflare Web Analytics) utan personuppgifter eller spårning mellan sidor — plus, om du väljer att skicka meddelandet, leverans av kontaktformuläret.",
       "about.detail1.title": "Samhällskritisk IT",
       "about.detail1.body": "IAM/IGA-koordinering i en av Sveriges mest komplexa driftmiljöer.",
       "about.detail2.title": "Agilt ledarskap",
@@ -101,7 +101,7 @@
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
       "exp.1.dates": "2025–2026",
       "exp.1.b1": "Koordinerade initiativ inom IAM, IGA och identitetssäkerhet i en av Sveriges mest komplexa och samhällskritiska IT-miljöer",
-      "exp.1.b2": "Ledde workshops, DEMOs, retrospectives och projektledarforum",
+      "exp.1.b2": "Forumansvarig för samtliga 12 projektledare inom sektionen Infrastruktur & Plattformar – faciliterade erfarenhetsutbyte och förbättringsplaner mellan projektledarna samt optimerade onboarding av nya PM:s; höll även workshops, DEMOs och retrospectives",
       "exp.1.b3": "Ägde Kanban-board och uppföljningsansvar i Jira/Atlassian för hela gruppen “Operativ säkerhet” — 28 personer i 5 team; migrerade planering från PowerPoint till en dynamisk Atlassian-vy; tog fram Definition of Ready (DoR) och Definition of Done (DoD)",
       "exp.1.b4": "Koordinerade mellan IT, säkerhet, verksamhet, arkitekter och externa leverantörer",
       "exp.1.b5": "Deltog i strategiska initiativ kring sourcing, RFI-processer och kravarbete",
@@ -138,7 +138,9 @@
       "projects.3.tag": "Datakvalitet & spårbarhet",
       "projects.3.title": "“Identitetsregister” — konsolidering av spridda identiteter",
       "projects.3.scope.value": "30 000+",
-      "projects.3.scope.label": "mänskliga & icke-mänskliga identiteter, fragmenterade över många system",
+      "projects.3.scope.label": "mänskliga & icke-mänskliga identiteter",
+      "projects.budget.value": "25–50 Mkr",
+      "projects.budget.label": "projektets budgetomfattning",
       "projects.3.s": "Situation: Cirka 30 000 identiteter — mänskliga och icke-mänskliga — var, och är delvis fortfarande, fragmenterade över många olika system inom Trafikförvaltningen och bland partners, underleverantörer och trafikutövare, vilket försvårade överblick och spårbarhet.",
       "projects.3.a": "Insats: Bidrog till ett omfattande projekt för att samla dessa i ett gemensamt identitetsregister, med fokus på säkerhet, spårbarhet och datakvalitet över hela ekosystemet av parter.",
       "projects.3.r": "Resultat: Bättre överblick över samtliga identiteter — mänskliga och icke-mänskliga — i hela leverantörskedjan, vilket stärkte säkerhet och datakvalitet.",
@@ -187,6 +189,8 @@
       "tools.group4": "Strategi & verksamhet",
       "tools.group5": "AI & automatisering",
       "tools.chip.aicode": "AI-kod & terminaler",
+      "tools.showMore": "Visa {n} till",
+      "tools.showLess": "Visa färre",
       "tools.chip.crm": "CRM-system",
       "tools.chip.agile": "Agila metoder",
       "tools.chip.waterfall": "Vattenfallsmetoder",
@@ -283,7 +287,7 @@
       "about.body2":
         "Leads workshops, demos, and retrospectives in agile teams, and complements hands-on project management experience with a post-secondary vocational degree (YH) in IT Project Management and a Professional Scrum Master certification (PSM I).",
       "about.privacy":
-        "This site is fully static, uses no third-party tracking or analytics, and loads no external fonts or scripts — only what's needed to display the page and, if you choose to send it, deliver the contact form.",
+        "This site is fully static and loads no external fonts. The only measurement is a cookie-free, GDPR-friendly visit counter (Cloudflare Web Analytics) with no personal data or cross-site tracking — plus, if you choose to send it, delivery of the contact form.",
       "about.detail1.title": "Critical infrastructure",
       "about.detail1.body": "IAM/IGA coordination in one of Sweden's most complex operating environments.",
       "about.detail2.title": "Agile leadership",
@@ -324,7 +328,7 @@
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
       "exp.1.dates": "2025–2026",
       "exp.1.b1": "Coordinated initiatives within IAM, IGA, and identity security in one of Sweden's most complex, society-critical IT environments",
-      "exp.1.b2": "Led workshops, demos, retrospectives, and project manager forums",
+      "exp.1.b2": "Forum lead for all 12 project managers within the Infrastructure & Platforms section – facilitated peer knowledge-sharing and improvement plans between PMs, and optimized onboarding for new PMs; also ran workshops, demos, and retrospectives",
       "exp.1.b3": "Owned the Kanban board and follow-up responsibility in Jira/Atlassian for the entire “Operational Security” group — 28 people across 5 teams; migrated planning from PowerPoint to a dynamic Atlassian view; introduced Definition of Ready (DoR) and Definition of Done (DoD)",
       "exp.1.b4": "Coordinated between IT, security, business, architects, and external suppliers",
       "exp.1.b5": "Took part in strategic initiatives around sourcing, RFI processes, and requirements work",
@@ -361,7 +365,9 @@
       "projects.3.tag": "Data quality & traceability",
       "projects.3.title": "“Identitetsregister” — Identity Register Consolidation",
       "projects.3.scope.value": "30,000+",
-      "projects.3.scope.label": "human & non-human identities, fragmented across many systems",
+      "projects.3.scope.label": "human & non-human identities",
+      "projects.budget.value": "25–50M SEK",
+      "projects.budget.label": "project budget scope",
       "projects.3.s": "Situation: Roughly 30,000 identities — human and non-human — were, and to some extent still are, fragmented across many different systems within Trafikförvaltningen and among partners, subcontractors, and transport operators, making oversight and traceability difficult.",
       "projects.3.a": "Action: Contributed to a large-scale project consolidating these into a shared identity register, with a focus on security, traceability, and data quality across the entire ecosystem of parties.",
       "projects.3.r": "Result: Improved visibility into all identities — human and non-human — across the full supply chain, strengthening both security and data quality.",
@@ -410,6 +416,8 @@
       "tools.group4": "Strategy & business",
       "tools.group5": "AI & automation",
       "tools.chip.aicode": "AI code & terminals",
+      "tools.showMore": "Show {n} more",
+      "tools.showLess": "Show less",
       "tools.chip.crm": "CRM systems",
       "tools.chip.agile": "Agile methods",
       "tools.chip.waterfall": "Waterfall methods",
@@ -536,6 +544,7 @@
   function toggleLang() {
     const next = getLang() === "sv" ? "en" : "sv";
     applyLang(next);
+    refreshToolsToggleLabels();
   }
 
   /* ----------------------------------------------------------------
@@ -651,7 +660,15 @@
       drawSkyline();
     }
 
-    function step() {
+    // Run the drift/glow animation for a short while to make an impression,
+    // then settle on a still frame — an always-on rAF + O(n²) line-distance
+    // loop has a real CPU/battery cost on a page left open, for no benefit
+    // once the visitor has seen it once.
+    const SETTLE_AFTER_MS = 8000;
+    let animStart = null;
+
+    function step(timestamp) {
+      if (animStart === null) animStart = timestamp;
       nodes.forEach((n) => {
         n.x += n.vx;
         n.y += n.vy;
@@ -659,13 +676,21 @@
         if (n.y < 0 || n.y > height * 0.68) n.vy *= -1;
       });
       drawFrame();
-      rafId = requestAnimationFrame(step);
+      if (timestamp - animStart < SETTLE_AFTER_MS) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        rafId = null;
+      }
     }
 
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(resize, 150);
+      // A resize (e.g. rotating a phone) is worth a fresh few seconds of
+      // motion rather than staying frozen on a now oddly-cropped frame.
+      animStart = null;
+      if (!reduceMotion && !rafId) rafId = requestAnimationFrame(step);
     });
 
     resize();
@@ -673,6 +698,52 @@
       rafId = requestAnimationFrame(step);
     }
     void rafId;
+  }
+
+  /* ----------------------------------------------------------------
+   * Tools & methods: fold the long tail of each chip group behind a
+   * "show N more" toggle instead of dumping everything at once. The
+   * extra chips stay in the DOM either way — text search, Ctrl+F and
+   * crawlers still see the full list — only the visual wall is trimmed.
+   * ------------------------------------------------------------- */
+  const VISIBLE_CHIPS = 6;
+
+  function setToggleLabel(toggle, row, expanded) {
+    const strings = dict[getLang()] || dict.sv;
+    toggle.textContent = expanded
+      ? strings["tools.showLess"]
+      : strings["tools.showMore"].replace("{n}", row.dataset.hiddenCount || "");
+  }
+
+  function initToolsOverflow() {
+    document.querySelectorAll(".tools-group .chip-row").forEach((row) => {
+      const chips = Array.from(row.querySelectorAll(".chip"));
+      // Folding away just one chip isn't worth a click — only bother once
+      // there's a real long tail to hide.
+      if (chips.length <= VISIBLE_CHIPS + 1) return;
+
+      chips.slice(VISIBLE_CHIPS).forEach((chip) => chip.classList.add("chip--extra"));
+      row.dataset.hiddenCount = String(chips.length - VISIBLE_CHIPS);
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "chip chip-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.addEventListener("click", () => {
+        const expanded = row.classList.toggle("expanded");
+        toggle.setAttribute("aria-expanded", String(expanded));
+        setToggleLabel(toggle, row, expanded);
+      });
+      row.appendChild(toggle);
+      setToggleLabel(toggle, row, false);
+    });
+  }
+
+  function refreshToolsToggleLabels() {
+    document.querySelectorAll(".chip-toggle").forEach((toggle) => {
+      const row = toggle.closest(".chip-row");
+      setToggleLabel(toggle, row, row.classList.contains("expanded"));
+    });
   }
 
   /* ----------------------------------------------------------------
@@ -858,6 +929,7 @@
     applyLang(getLang());
     initControls();
     initNetworkCanvas();
+    initToolsOverflow();
     initMobileNav();
     initScrollSpy();
     initReveal();

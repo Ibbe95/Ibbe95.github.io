@@ -27,25 +27,43 @@ en gång på svenska som fallback-text i HTML:en, och en gång i
 faktiskt visas, så **ändra där**, inte bara i HTML-fallbacken).
 
 ## Publicera på GitHub Pages
-Repot `https://github.com/Ibbe95/ftw` är redan skapat och tomt. Från den här
-mappen:
+**Steg 1 — byt repo-namn (ger en ren adress utan `/ftw/`-suffix):**
+Gå till `https://github.com/Ibbe95/ftw` → **Settings** → byt "Repository name"
+till exakt `Ibbe95.github.io` → **Rename**. Det här är GitHub:s specialnamn
+för ett personligt sajt-repo — det gör att Pages hamnar direkt på
+`https://ibbe95.github.io/` istället för `https://ibbe95.github.io/ftw/`.
+
+**Steg 2 — pusha koden** (repot är redan git-initierat lokalt med en commit
+klar, se `git log` i den här mappen). Antingen via GitHub Desktop
+(**Add Local Repository** → peka på den här mappen → **Push origin**), eller
+i terminalen:
 
 ```bash
-git init
-git add .
-git commit -m "Första version av portfoliosidan"
-git branch -M main
-git remote add origin https://github.com/Ibbe95/ftw.git
+git remote set-url origin https://github.com/Ibbe95/Ibbe95.github.io.git
 git push -u origin main
 ```
 
-Aktivera sedan GitHub Pages: repo → **Settings → Pages** → under "Build and
-deployment", välj **Deploy from a branch**, branch `main`, mapp `/ (root)`.
-Sidan blir tillgänglig på `https://ibbe95.github.io/ftw/` inom någon minut.
+**Steg 3 — aktivera GitHub Pages:** repo → **Settings → Pages** → under
+"Build and deployment", välj **Deploy from a branch**, branch `main`, mapp
+`/ (root)`. Sidan blir tillgänglig på `https://ibbe95.github.io/` inom någon
+minut.
 
-Vill du ha ett eget domännamn senare (t.ex. `ibrahimnjie.se`) läggs det till
-under samma Pages-inställning ("Custom domain") — hör av dig så hjälper jag
-till att peka DNS rätt när du köpt en domän.
+## Koppla eget domännamn (t.ex. `ibrahimnjie.se`)
+Domänköpet gör du själv hos en registrar som stödjer `.se` (t.ex.
+[Loopia](https://www.loopia.se), [One.com](https://www.one.com/sv/) eller
+[Binero](https://www.binero.se)) — det är ett köp jag inte kan göra åt dig.
+När du har domänen, hör av dig så hjälper jag till med:
+
+1. Lägg till en fil `CNAME` i repo-roten med bara domännamnet i, t.ex.
+   `ibrahimnjie.se`.
+2. Hos din registrar, peka domänen mot GitHub Pages: antingen en
+   **ALIAS/ANAME**-post mot `ibbe95.github.io`, eller fyra **A-poster** mot
+   GitHub Pages IP-adresser (`185.199.108.153`, `.109.153`, `.110.153`,
+   `.111.153`) — vilket som stöds beror på din registrar.
+3. I **Settings → Pages** på GitHub, fyll i domänen under "Custom domain"
+   och vänta på att DNS-kontrollen blir grön (kan ta upp till någon timme).
+4. Uppdatera `og:url`/`canonical` i `index.html` samt `robots.txt` och
+   `sitemap.xml` till den nya domänen — säg till så fixar jag det.
 
 ## Aktivera kontaktformuläret
 Formuläret postar till [Web3Forms](https://web3forms.com) — gratis, ingen

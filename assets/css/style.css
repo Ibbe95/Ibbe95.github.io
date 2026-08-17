@@ -492,7 +492,7 @@ main {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(4rem, 10vw, 7rem);
+  padding-top: clamp(2rem, 5vw, 3.5rem);
   padding-bottom: clamp(3rem, 7vw, 5rem);
   background: radial-gradient(120% 100% at 15% 0%, #0b1730 0%, var(--bg) 55%);
 }
@@ -616,30 +616,26 @@ main {
   color: var(--accent);
 }
 
-/* Hero visual panel: a LinkedIn callout card, framed with a single offset
-   rule (not a gradient glow or dashed ring) — closer to an index card than
-   an app icon. */
-.hero-visual-wrap {
-  position: relative;
-  max-width: 360px;
-  margin-inline: auto;
-  padding: 14px 14px 0 0;
+/* Hero visual panel: a single clean LinkedIn callout card — no offset
+   double-frame, just one confident surface with the platform's own blue
+   as a deliberate, meaningful accent (this card only). */
+:root {
+  --linkedin-blue: #0a66c2;
+  --linkedin-blue-soft: rgba(10, 102, 194, 0.14);
 }
 
-.hero-visual-wrap .ring-2 {
-  position: absolute;
-  inset: 0 0 14px 14px;
-  border: 1px solid var(--border-strong);
-  pointer-events: none;
+.hero-visual-wrap {
+  max-width: 360px;
+  margin-inline: auto;
 }
 
 .hero-visual {
   position: relative;
-  z-index: 1;
   aspect-ratio: 3 / 4;
-  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+  background: color-mix(in srgb, var(--surface-2) 92%, transparent);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
@@ -647,6 +643,7 @@ main {
 .hero-linkedin {
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: clamp(1.5rem, 4vw, 2.25rem);
   text-decoration: none;
   color: var(--text);
@@ -655,9 +652,32 @@ main {
 }
 
 .hero-linkedin:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: var(--glow);
+  border-color: var(--linkedin-blue);
+  background: var(--linkedin-blue-soft);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--linkedin-blue) 45%, transparent),
+    0 0 26px color-mix(in srgb, var(--linkedin-blue) 30%, transparent);
+}
+
+.hero-linkedin-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hero-linkedin-icon-wrap {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--linkedin-blue-soft);
+  color: var(--linkedin-blue);
+}
+
+.hero-linkedin-icon {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .hero-linkedin-label {
@@ -668,15 +688,8 @@ main {
   color: var(--text-faint);
 }
 
-.hero-linkedin-icon {
-  width: 2rem;
-  height: 2rem;
-  color: var(--accent);
-  margin-top: auto;
-}
-
 .hero-linkedin-name {
-  margin-top: 0.9rem;
+  margin-top: 1.25rem;
   font-family: var(--font-display);
   font-size: 1.9rem;
   font-weight: 600;
@@ -692,13 +705,14 @@ main {
 
 .hero-linkedin-cta {
   margin-top: auto;
-  padding-top: 1.5rem;
+  align-self: flex-start;
+  padding-top: 1.75rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   font-weight: 600;
   font-size: 0.92rem;
-  color: var(--accent);
+  color: var(--linkedin-blue);
 }
 
 .hero-linkedin-cta svg {

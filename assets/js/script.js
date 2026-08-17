@@ -67,6 +67,8 @@
       "about.detail2.body": "Workshops, DEMOs, retrospectives och backlog-arbete i praktiken.",
       "about.detail3.title": "Governance & struktur",
       "about.detail3.body": "Kanban, DoR/DoD och dokumentation som faktiskt följs.",
+      "about.quote":
+        "Jag tror på att vara rak och tydlig, även när det är obekvämt — det bygger förtroende snabbare än något annat. Processer och verktyg, AI inräknat, är bara bra om de faktiskt gör vardagen enklare för människorna som använder dem; jag glömmer aldrig bort det i jakten på effektivitet. Och jag investerar lika mycket i att bygga och hålla liv i relationer som i att optimera ett arbetsflöde — de flesta av mina bästa möjligheter har kommit från människor, inte processer.",
 
       "skills.eyebrow": "Kompetens",
       "skills.heading": "Kärnkompetenser",
@@ -277,6 +279,8 @@
       "about.detail2.body": "Workshops, demos, retrospectives, and hands-on backlog work.",
       "about.detail3.title": "Governance & structure",
       "about.detail3.body": "Kanban, DoR/DoD, and documentation people actually use.",
+      "about.quote":
+        "I believe in being direct and clear, even when it's uncomfortable — it builds trust faster than anything else. Process and tools, AI included, are only worth something if they actually make life easier for the people using them; I never lose sight of that in the pursuit of efficiency. And I invest as much in building and maintaining relationships as I do in optimizing a workflow — most of my best opportunities have come from people, not processes.",
 
       "skills.eyebrow": "Skills",
       "skills.heading": "Core competencies",

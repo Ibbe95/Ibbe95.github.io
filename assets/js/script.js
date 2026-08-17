@@ -45,7 +45,7 @@
       "hero.linkedin.cta": "Se profil",
 
       "stats.people.value": "28",
-      "stats.people.label": "personer i gruppen “Operativ säkerhet” fick ny Kanban-styrning",
+      "stats.people.label": "personer i gruppen “Operativ säkerhet” fick strukturerad uppföljning — agil och traditionell",
       "stats.teams.value": "5",
       "stats.teams.label": "team koordinerade under samma governance-modell",
       "stats.consultants.value": "20+",
@@ -225,7 +225,7 @@
         "Formuläret är inte aktiverat än — maila mig gärna direkt på ibrahim.njie1995@gmail.com så länge.",
 
       "footer.rights": "Alla rättigheter förbehållna.",
-      "footer.built": "Statisk sida — ingen spårning, ingen tredjepartsanalys.",
+      "footer.top": "Till toppen",
     },
 
     en: {
@@ -257,7 +257,7 @@
       "hero.linkedin.cta": "View profile",
 
       "stats.people.value": "28",
-      "stats.people.label": "people in the “Operational Security” group under new Kanban governance",
+      "stats.people.label": "people in the “Operational Security” group brought under structured follow-up — agile and traditional",
       "stats.teams.value": "5",
       "stats.teams.label": "teams coordinated under the same governance model",
       "stats.consultants.value": "20+",
@@ -437,7 +437,7 @@
         "The form isn't enabled yet — please email me directly at ibrahim.njie1995@gmail.com for now.",
 
       "footer.rights": "All rights reserved.",
-      "footer.built": "Static site — no tracking, no third-party analytics.",
+      "footer.top": "Back to top",
     },
   };
 

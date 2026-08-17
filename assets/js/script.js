@@ -448,8 +448,9 @@
   }
 
   function toggleTheme() {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
+    // Dark navy is the committed default regardless of OS preference —
+    // only an explicit prior choice can make "light" the current state.
+    const current = root.getAttribute("data-theme") || "dark";
     const next = current === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
     localStorage.setItem(STORAGE_THEME, next);
@@ -509,6 +510,143 @@
   function toggleLang() {
     const next = getLang() === "sv" ? "en" : "sv";
     applyLang(next);
+  }
+
+  /* ----------------------------------------------------------------
+   * Hero background: a small network graph (nodes + connecting lines)
+   * drifting over a procedurally-drawn city skyline silhouette — an
+   * IT/OT "structure & communication" motif, entirely generated in
+   * Canvas (no image asset, no external library). Respects
+   * prefers-reduced-motion by drawing one static frame instead of
+   * looping, and repaints on resize/theme change.
+   * ------------------------------------------------------------- */
+  function initNetworkCanvas() {
+    const canvas = document.getElementById("network-canvas");
+    if (!canvas || !canvas.getContext) return;
+    const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let nodes = [];
+    let rafId = null;
+
+    function seededRandom(seed) {
+      // Deterministic pseudo-random so the skyline doesn't reshuffle on
+      // every resize/repaint — just a cheap sine-based hash, not crypto.
+      const x = Math.sin(seed * 12.9898) * 43758.5453;
+      return x - Math.floor(x);
+    }
+
+    function buildNodes() {
+      const count = Math.max(16, Math.min(46, Math.round((width * height) / 26000)));
+      nodes = Array.from({ length: count }, (_, i) => ({
+        x: seededRandom(i * 3.1 + 1) * width,
+        y: seededRandom(i * 7.7 + 2) * height * 0.68,
+        vx: (seededRandom(i * 5.3 + 3) - 0.5) * 0.18,
+        vy: (seededRandom(i * 9.1 + 4) - 0.5) * 0.18,
+        r: seededRandom(i * 2.2 + 5) * 1.3 + 1.1,
+      }));
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = Math.max(1, rect.width);
+      height = Math.max(1, rect.height);
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildNodes();
+      drawFrame();
+    }
+
+    function drawSkyline() {
+      const skylineBase = height;
+      const bandHeight = height * 0.34;
+      const bandTop = height - bandHeight;
+      let x = -10;
+      let i = 0;
+      while (x < width + 10) {
+        const w = 14 + seededRandom(i * 4.4 + 10) * 26;
+        const h = bandHeight * (0.18 + seededRandom(i * 6.6 + 20) * 0.85);
+        const y = skylineBase - h;
+        ctx.fillStyle = "rgba(5, 9, 17, 0.85)";
+        ctx.fillRect(x, y, w, h);
+        // window lights, sparse
+        const rows = Math.max(1, Math.floor(h / 14));
+        const cols = Math.max(1, Math.floor(w / 9));
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            if (seededRandom(i * 100 + r * 10 + c) > 0.72) {
+              ctx.fillStyle = "rgba(133, 180, 255, 0.55)";
+              ctx.fillRect(x + 3 + c * 9, y + 6 + r * 14, 2.5, 3.5);
+            }
+          }
+        }
+        i++;
+        x += w + 3;
+      }
+      void bandTop;
+    }
+
+    function drawFrame() {
+      ctx.clearRect(0, 0, width, height);
+
+      const maxDist = Math.min(150, width / 5);
+      for (let a = 0; a < nodes.length; a++) {
+        for (let b = a + 1; b < nodes.length; b++) {
+          const dx = nodes[a].x - nodes[b].x;
+          const dy = nodes[a].y - nodes[b].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * 0.32;
+            ctx.strokeStyle = "rgba(90, 150, 255," + alpha + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[a].x, nodes[a].y);
+            ctx.lineTo(nodes[b].x, nodes[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      nodes.forEach((n) => {
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(140, 190, 255, 0.9)";
+        ctx.shadowColor = "rgba(76, 141, 255, 0.9)";
+        ctx.shadowBlur = 7;
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.shadowBlur = 0;
+
+      drawSkyline();
+    }
+
+    function step() {
+      nodes.forEach((n) => {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > width) n.vx *= -1;
+        if (n.y < 0 || n.y > height * 0.68) n.vy *= -1;
+      });
+      drawFrame();
+      rafId = requestAnimationFrame(step);
+    }
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
+
+    resize();
+    if (!reduceMotion) {
+      rafId = requestAnimationFrame(step);
+    }
+    void rafId;
   }
 
   /* ----------------------------------------------------------------
@@ -693,6 +831,7 @@
     initTheme();
     applyLang(getLang());
     initControls();
+    initNetworkCanvas();
     initMobileNav();
     initScrollSpy();
     initReveal();

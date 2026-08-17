@@ -5,40 +5,43 @@
    ========================================================================= */
 
 /* ---------- Design tokens --------------------------------------------
-   Palette: warm paper + ink + a brass/seal accent — closer to a registry
-   ledger or an official document than a generic teal SaaS gradient.
-   Deliberately avoids the current AI-generated-design defaults (teal-on-
-   slate, cream+terracotta, purple gradients, pill-everything).
+   Palette: deep navy + signal blue/cyan — an IT/OT & cybersecurity read
+   (network graphs, control-room glow), committed to as the site's
+   identity rather than following the visitor's OS preference. A lighter
+   variant is still available via the manual toggle for anyone who wants
+   it, but dark navy is the default in both senses of the word.
    ------------------------------------------------------------------- */
 :root {
-  /* Light palette (default) */
-  --bg: #f6f6f2;
-  --bg-soft: #efeee6;
-  --surface: #fffffe;
-  --surface-2: #fbfaf5;
-  --border: #dcdaca;
-  --border-strong: #c7c4ae;
-  --text: #201f18;
-  --text-muted: #59564a;
-  --text-faint: #7d7a6a;
-  --accent: #8a5a1e;
-  --accent-strong: #6a4416;
-  --accent-soft: #ece1c8;
-  --accent-on: #fffef9;
-  --ink: #223452;
-  --ink-soft: #dfe4ec;
-  --danger: #a3311a;
-  --success: #3f6e2e;
-  --focus-ring: #8a5a1e;
+  /* Dark navy (default, unconditional) */
+  --bg: #060910;
+  --bg-soft: #0a0f1c;
+  --surface: #0d1424;
+  --surface-2: #0a1120;
+  --border: #1c2a44;
+  --border-strong: #2c4066;
+  --text: #e8edf8;
+  --text-muted: #93a0bf;
+  --text-faint: #5b6884;
+  --accent: #4c8dff;
+  --accent-strong: #85b4ff;
+  --accent-soft: #101d38;
+  --accent-on: #04060c;
+  --ink: #38bdf8;
+  --ink-soft: #0b2436;
+  --danger: #f87171;
+  --success: #34d399;
+  --focus-ring: #6ba4ff;
 
-  --shadow-sm: 0 1px 2px rgba(32, 31, 24, 0.07);
-  --shadow-md: 0 8px 20px rgba(32, 31, 24, 0.09);
-  --shadow-lg: 0 18px 38px rgba(32, 31, 24, 0.14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 26px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 22%, transparent);
 
-  --radius-sm: 3px;
-  --radius-md: 5px;
-  --radius-lg: 7px;
-  --radius-pill: 3px; /* kept as a token for compatibility; intentionally not a pill */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 2px; /* kept as a token for compatibility; intentionally not a pill */
 
   --font-display: Charter, "Iowan Old Style", Georgia, "Noto Serif", "Liberation Serif",
     "Times New Roman", serif;
@@ -54,73 +57,31 @@
   --transition-base: 250ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #16150f;
-    --bg-soft: #1c1b13;
-    --surface: #201f16;
-    --surface-2: #1a1912;
-    --border: #38361f;
-    --border-strong: #4a4728;
-    --text: #ece8d9;
-    --text-muted: #b3ae98;
-    --text-faint: #8c8874;
-    --accent: #d9a544;
-    --accent-strong: #eec06e;
-    --accent-soft: #362a11;
-    --accent-on: #1b1608;
-    --ink: #9fb7d6;
-    --ink-soft: #202c3d;
-    --danger: #e39079;
-    --success: #9bc788;
-    --focus-ring: #d9a544;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-    --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 22px 48px rgba(0, 0, 0, 0.5);
-  }
-}
-
-/* Explicit toggle always wins over the media query, in both directions */
-:root[data-theme="dark"] {
-  --bg: #16150f;
-  --bg-soft: #1c1b13;
-  --surface: #201f16;
-  --surface-2: #1a1912;
-  --border: #38361f;
-  --border-strong: #4a4728;
-  --text: #ece8d9;
-  --text-muted: #b3ae98;
-  --text-faint: #8c8874;
-  --accent: #d9a544;
-  --accent-strong: #eec06e;
-  --accent-soft: #362a11;
-  --accent-on: #1b1608;
-  --ink: #9fb7d6;
-  --ink-soft: #202c3d;
-  --danger: #e39079;
-  --success: #9bc788;
-  --focus-ring: #d9a544;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 22px 48px rgba(0, 0, 0, 0.5);
-}
-
+/* Optional lighter variant — reachable only via the manual toggle, never
+   the default, since the whole point is a committed dark identity. */
 :root[data-theme="light"] {
-  --bg: #f6f6f2;
-  --bg-soft: #efeee6;
-  --surface: #fffffe;
-  --surface-2: #fbfaf5;
-  --border: #dcdaca;
-  --border-strong: #c7c4ae;
-  --text: #201f18;
-  --text-muted: #59564a;
-  --text-faint: #7d7a6a;
-  --accent: #8a5a1e;
-  --accent-strong: #6a4416;
-  --accent-soft: #ece1c8;
-  --accent-on: #fffef9;
-  --ink: #223452;
-  --ink-soft: #dfe4ec;
+  --bg: #f3f6fc;
+  --bg-soft: #e7edf8;
+  --surface: #ffffff;
+  --surface-2: #fbfcfe;
+  --border: #d6deed;
+  --border-strong: #b7c3db;
+  --text: #0b1220;
+  --text-muted: #4a5670;
+  --text-faint: #717d99;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-soft: #dde8fc;
+  --accent-on: #ffffff;
+  --ink: #0891b2;
+  --ink-soft: #dff4fa;
+  --danger: #dc2626;
+  --success: #059669;
+  --focus-ring: #2563eb;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --glow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 /* ---------- Reset ------------------------------------------------------ */
@@ -151,13 +112,21 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: linear-gradient(color-mix(in srgb, var(--accent) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 6%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+:root[data-theme="light"] body {
+  background-image: linear-gradient(color-mix(in srgb, var(--accent) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 4%, transparent) 1px, transparent 1px);
 }
 
 img,
@@ -323,10 +292,12 @@ main {
 .btn-primary {
   background: var(--accent);
   color: var(--accent-on);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .btn-primary:hover {
   background: var(--accent-strong);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
 .btn-secondary {
@@ -519,11 +490,43 @@ main {
 
 /* ---------- Hero ---------------------------------------------------------- */
 .hero {
-  padding-top: clamp(3rem, 8vw, 5.5rem);
-  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(4rem, 10vw, 7rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  background: radial-gradient(120% 100% at 15% 0%, #0b1730 0%, var(--bg) 55%);
+}
+
+:root[data-theme="light"] .hero {
+  background: radial-gradient(120% 100% at 15% 0%, #e4ecfb 0%, var(--bg) 60%);
+}
+
+#network-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+:root[data-theme="light"] #network-canvas {
+  opacity: 0.35;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, transparent 45%, var(--bg) 96%),
+    linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 55%, transparent) 38%, transparent 62%);
+  pointer-events: none;
 }
 
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: clamp(2rem, 6vw, 3rem);
   align-items: center;
@@ -537,44 +540,49 @@ main {
 
 .hero-badge {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-faint);
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.45rem 0.8rem 0.45rem 0.65rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border-strong);
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-pill);
 }
 
 .hero-badge .dot {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
   background: var(--success);
   flex-shrink: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent), 0 0 10px var(--success);
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-size: clamp(2.8rem, 7.5vw, 5.2rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.05;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  text-shadow: 0 0 40px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .hero .role {
-  margin-top: 0.6rem;
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  margin-top: 0.75rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
   font-weight: 500;
   font-style: italic;
   font-family: var(--font-display);
-  color: var(--text-muted);
+  color: var(--ink);
 }
 
 .hero .tagline {
-  margin-top: 1.1rem;
+  margin-top: 1.25rem;
   max-width: 46ch;
   color: var(--text-muted);
   font-size: 1.1rem;
@@ -629,8 +637,10 @@ main {
   position: relative;
   z-index: 1;
   aspect-ratio: 3 / 4;
-  background: var(--surface-2);
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 
@@ -640,12 +650,14 @@ main {
   padding: clamp(1.5rem, 4vw, 2.25rem);
   text-decoration: none;
   color: var(--text);
-  transition: border-color var(--transition-fast), background var(--transition-fast);
+  transition: border-color var(--transition-fast), background var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .hero-linkedin:hover {
   border-color: var(--accent);
   background: var(--accent-soft);
+  box-shadow: var(--glow);
 }
 
 .hero-linkedin-label {
@@ -835,11 +847,12 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 1.4rem;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .skill-card:hover {
   border-color: var(--accent);
+  box-shadow: var(--glow);
 }
 
 .skill-card .icon {
@@ -1003,11 +1016,13 @@ main {
   border-top: 2px solid var(--border-strong);
   padding: clamp(1.4rem, 3vw, 1.9rem);
   counter-increment: project;
-  transition: border-top-color var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .project-card:hover {
+  border-color: var(--accent);
   border-top-color: var(--accent);
+  box-shadow: var(--glow);
 }
 
 .project-tag {

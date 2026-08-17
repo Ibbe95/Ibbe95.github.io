@@ -48,22 +48,41 @@ git push -u origin main
 `/ (root)`. Sidan blir tillgänglig på `https://ibbe95.github.io/` inom någon
 minut.
 
-## Koppla eget domännamn (t.ex. `ibrahimnjie.se`)
-Domänköpet gör du själv hos en registrar som stödjer `.se` (t.ex.
-[Loopia](https://www.loopia.se), [One.com](https://www.one.com/sv/) eller
-[Binero](https://www.binero.se)) — det är ett köp jag inte kan göra åt dig.
-När du har domänen, hör av dig så hjälper jag till med:
+## Eget domännamn — `ibrahimnjie.com` (köpt via Cloudflare Registrar)
+Domänen är köpt. `CNAME`-filen i repo-roten och alla URL-referenser
+(`og:url`, `canonical`, `robots.txt`, `sitemap.xml`) är redan uppdaterade
+till `ibrahimnjie.com`. Det som återstår görs i två gränssnitt du är
+inloggad i (Cloudflare + GitHub):
 
-1. Lägg till en fil `CNAME` i repo-roten med bara domännamnet i, t.ex.
-   `ibrahimnjie.se`.
-2. Hos din registrar, peka domänen mot GitHub Pages: antingen en
-   **ALIAS/ANAME**-post mot `ibbe95.github.io`, eller fyra **A-poster** mot
-   GitHub Pages IP-adresser (`185.199.108.153`, `.109.153`, `.110.153`,
-   `.111.153`) — vilket som stöds beror på din registrar.
-3. I **Settings → Pages** på GitHub, fyll i domänen under "Custom domain"
-   och vänta på att DNS-kontrollen blir grön (kan ta upp till någon timme).
-4. Uppdatera `og:url`/`canonical` i `index.html` samt `robots.txt` och
-   `sitemap.xml` till den nya domänen — säg till så fixar jag det.
+**1. DNS hos Cloudflare** (dash.cloudflare.com → välj `ibrahimnjie.com` →
+**DNS → Records → Add record**), lägg till fyra A-poster:
+
+| Type | Name | Content | Proxy status |
+|---|---|---|---|
+| A | @ | 185.199.108.153 | DNS only (grått moln) |
+| A | @ | 185.199.109.153 | DNS only |
+| A | @ | 185.199.110.153 | DNS only |
+| A | @ | 185.199.111.153 | DNS only |
+
+Valfritt men rekommenderat, så `www.ibrahimnjie.com` också funkar:
+
+| Type | Name | Content | Proxy status |
+|---|---|---|---|
+| CNAME | www | ibbe95.github.io | DNS only |
+
+**Viktigt:** sätt proxy-status till **"DNS only"** (klicka på det orangea
+molnet så det blir grått) på alla dessa poster. Om Cloudflares proxy är på
+kan GitHub inte verifiera domänen eller utfärda HTTPS-certifikatet. Du kan
+slå på proxyn igen efteråt om du vill ha Cloudflares extra skydd/cache —
+men inte förrän GitHub bekräftat att allt fungerar.
+
+**2. Custom domain hos GitHub** (repo → **Settings → Pages**):
+Fyll i `ibrahimnjie.com` under "Custom domain" → **Save**. Vänta tills
+DNS-kontrollen blir grön (oftast några minuter, kan ta upp till någon
+timme), kryssa sedan i **"Enforce HTTPS"** när den rutan blir valbar.
+
+Sidan är sedan live på **https://ibrahimnjie.com/** — `ibbe95.github.io`
+fortsätter fungera parallellt (omdirigeras automatiskt).
 
 ## Aktivera kontaktformuläret
 Formuläret postar till [Web3Forms](https://web3forms.com) — gratis, ingen

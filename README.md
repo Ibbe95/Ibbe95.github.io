@@ -4,6 +4,14 @@ Statisk, responsiv portfoliosida. Ren HTML/CSS/JS — inga byggverktyg, inga
 paketberoenden, inga externa typsnitt eller skript-CDN:er. Det håller sidan
 snabb, enkel att underhålla och minimerar attackytan (se **Säkerhet** nedan).
 
+## Viktigt vid varje CSS/JS-ändring: bumpa versionsnumret
+`index.html` laddar `style.css?v=13` och `script.js?v=13` — GitHub Pages
+CDN (Fastly) cachar annars dessa filer aggressivt och besökare (och vi
+själva) kan se en gammal version i flera minuter efter en push, trots att
+koden på GitHub redan är korrekt. **Höj siffran med 1** i båda
+`<link>`/`<script>`-taggarna i `index.html` varje gång `style.css` eller
+`script.js` ändras — det tvingar fram en färsk hämtning direkt.
+
 ## Struktur
 ```
 index.html              Hela sidan (en sida, ankarlänkar mellan sektioner)

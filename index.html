@@ -29,10 +29,9 @@
 
   <!-- Cloudflare Web Analytics: cookie-free, no fingerprinting, no personal
        data collected — see https://www.cloudflare.com/web-analytics/.
-       Get your own token free at dash.cloudflare.com → Analytics & Logs →
-       Web Analytics → Add a site, then replace REPLACE_WITH_CF_BEACON_TOKEN
-       below. Until replaced, this script simply won't send anything. -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CF_BEACON_TOKEN"}'></script>
+       Manual-install snippet (required since DNS is "DNS only", not
+       proxied — automatic injection wouldn't see this site's traffic). -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9fdd1d09bd8e4d608bf1d146dd9676aa"}'></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="nav.skipToContent">Skip to content</a>

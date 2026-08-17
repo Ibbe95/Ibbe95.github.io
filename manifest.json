@@ -1,0 +1,17 @@
+{
+  "name": "Ibrahim Njie — Portfolio",
+  "short_name": "Ibrahim Njie",
+  "description": "IT-projektledare & IAM-koordinator — portfolio",
+  "start_url": ".",
+  "display": "browser",
+  "lang": "sv",
+  "theme_color": "#0f766e",
+  "background_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

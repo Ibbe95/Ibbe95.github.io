@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ibrahim Njie — IT-projektledare &amp; IAM-koordinator</title>
+  <meta name="description" content="Portfolio för Ibrahim Njie, IT-projektledare med erfarenhet av IAM, agil koordinering och samhällskritiska IT-miljöer." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a1120" media="(prefers-color-scheme: dark)" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Security: strict Content-Security-Policy. Zero external scripts/styles/fonts;
+       the only cross-origin request this page ever makes is the optional contact-form
+       POST to Web3Forms, explicitly allow-listed below. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ibrahim Njie — IT-projektledare & IAM-koordinator" />
+  <meta property="og:description" content="Portfolio för Ibrahim Njie, IT-projektledare med erfarenhet av IAM, agil koordinering och samhällskritiska IT-miljöer." />
+  <meta property="og:url" content="https://ibbe95.github.io/ftw/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="canonical" href="https://ibbe95.github.io/ftw/" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skipToContent">Hoppa till innehåll</a>
+
+  <!-- Icon sprite: hand-drawn minimal line icons, no external icon library. -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15.7 14.3c2.4.5 4.1 2.6 4.1 5.7"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></symbol>
+      <symbol id="icon-cycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5"/><polyline points="18 3 18 7 14 7"/><path d="M20 12a8 8 0 0 1-14 5"/><polyline points="6 21 6 17 10 17"/></symbol>
+      <symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></symbol>
+      <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 3 21 8 12 13 3 8"/><polyline points="3 13 12 18 21 13"/></symbol>
+      <symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M11 6l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M13 18l-1 1a4 4 0 0 1-6-6l1-1"/></symbol>
+      <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+      <symbol id="icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><polyline points="8.5 12.5 7 21 12 18 17 21 15.5 12.5"/></symbol>
+      <symbol id="icon-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2z"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.5 4 5.8 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.8-4-9s1.5-6.5 4-9z"/></symbol>
+      <symbol id="icon-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><line x1="20" y1="4" x2="10" y2="14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 11 12 16 17 11"/><path d="M5 19h14"/></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="12" x2="21" y2="12"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true">IN</span>
+        <span>Ibrahim Njie</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">Om mig</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Erfarenhet</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Kompetens</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projekt</a></li>
+          <li><a href="#certifications" data-i18n="nav.certifications">Certifieringar</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="lang-toggle" type="button" class="icon-btn lang-toggle" data-i18n-attr="aria-label:nav.toggleLang">
+          <span data-lang-label aria-hidden="true">EN</span>
+        </button>
+        <button id="theme-toggle" type="button" class="icon-btn icon-swap" data-i18n-attr="aria-label:nav.toggleTheme">
+          <svg data-icon="default" aria-hidden="true"><use href="#icon-moon"/></svg>
+          <svg data-icon="alt" aria-hidden="true"><use href="#icon-sun"/></svg>
+        </button>
+        <button id="nav-toggle" type="button" class="icon-btn nav-toggle" aria-expanded="false" aria-controls="nav-mobile" data-i18n-attr="aria-label:nav.toggleMenu">
+          <svg aria-hidden="true"><use href="#icon-menu"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="nav-mobile" class="nav-mobile" data-open="false" aria-label="Mobilmeny">
+      <ul>
+        <li><a href="#about" data-i18n="nav.about">Om mig</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Erfarenhet</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Kompetens</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projekt</a></li>
+        <li><a href="#certifications" data-i18n="nav.certifications">Certifieringar</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">Öppen för nya möjligheter</span></p>
+          <h1>Ibrahim Njie</h1>
+          <p class="role" data-i18n="hero.role">IT-projektledare &amp; IAM-koordinator</p>
+          <p class="tagline" data-i18n="hero.tagline">Jag driver och koordinerar komplexa initiativ i samhällskritiska IT-miljöer.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">
+              <svg aria-hidden="true"><use href="#icon-mail"/></svg>
+              <span data-i18n="hero.ctaContact">Kontakta mig</span>
+            </a>
+            <a id="cv-download" class="btn btn-secondary" href="assets/cv/CV_Ibrahim_Njie_SV.pdf" download>
+              <svg aria-hidden="true"><use href="#icon-download"/></svg>
+              <span data-i18n="hero.ctaCv">Ladda ner CV</span>
+            </a>
+          </div>
+
+          <ul class="hero-meta">
+            <li><svg aria-hidden="true"><use href="#icon-pin"/></svg><span data-i18n="hero.meta.location">Stockholm, Sverige</span></li>
+            <li><svg aria-hidden="true"><use href="#icon-globe"/></svg><span data-i18n="hero.meta.lang">Svenska &amp; engelska</span></li>
+            <li><svg aria-hidden="true"><use href="#icon-award"/></svg><span data-i18n="hero.meta.cert">PSM I-certifierad</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <span class="ring ring-2"></span>
+          <span class="ring"></span>
+          <span class="initials">IN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-section" aria-label="Nyckeltal">
+      <div class="container">
+        <ul class="stats" data-reveal>
+          <li class="stat"><strong data-i18n="stats.people.value">28</strong><span data-i18n="stats.people.label">personer</span></li>
+          <li class="stat"><strong data-i18n="stats.teams.value">5</strong><span data-i18n="stats.teams.label">team</span></li>
+          <li class="stat"><strong data-i18n="stats.consultants.value">20+</strong><span data-i18n="stats.consultants.label">konsulter</span></li>
+          <li class="stat"><strong data-i18n="stats.cert.value">PSM I</strong><span data-i18n="stats.cert.label">certifiering</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div data-reveal>
+          <p class="eyebrow" data-i18n="about.eyebrow">Om mig</p>
+          <h2 id="about-heading" data-i18n="about.heading">Möjliggörare för team i komplexa miljöer</h2>
+          <div class="about-body about-body--spaced">
+            <p data-i18n="about.body1">Profiltext stycke 1.</p>
+            <p data-i18n="about.body2">Profiltext stycke 2.</p>
+          </div>
+          <p class="privacy-note">
+            <svg aria-hidden="true"><use href="#icon-lock"/></svg>
+            <span data-i18n="about.privacy">Integritetsnotis.</span>
+          </p>
+        </div>
+
+        <ul class="detail-list" data-reveal>
+          <li>
+            <span class="icon" aria-hidden="true"><svg><use href="#icon-shield"/></svg></span>
+            <div>
+              <h3 data-i18n="about.detail1.title">Samhällskritisk IT</h3>
+              <p data-i18n="about.detail1.body">Beskrivning.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true"><svg><use href="#icon-cycle"/></svg></span>
+            <div>
+              <h3 data-i18n="about.detail2.title">Agilt ledarskap</h3>
+              <p data-i18n="about.detail2.body">Beskrivning.</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true"><svg><use href="#icon-layers"/></svg></span>
+            <div>
+              <h3 data-i18n="about.detail3.title">Governance &amp; struktur</h3>
+              <p data-i18n="about.detail3.body">Beskrivning.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="alt-bg" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="skills.eyebrow">Kompetens</p>
+          <h2 id="skills-heading" data-i18n="skills.heading">Kärnkompetenser</h2>
+          <p data-i18n="skills.sub">Underrubrik.</p>
+        </div>
+
+        <div class="skills-grid" data-reveal>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-briefcase"/></svg></span><h3 data-i18n="skills.1.title"></h3><p data-i18n="skills.1.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-cycle"/></svg></span><h3 data-i18n="skills.2.title"></h3><p data-i18n="skills.2.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-users"/></svg></span><h3 data-i18n="skills.3.title"></h3><p data-i18n="skills.3.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-clock"/></svg></span><h3 data-i18n="skills.4.title"></h3><p data-i18n="skills.4.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-file"/></svg></span><h3 data-i18n="skills.5.title"></h3><p data-i18n="skills.5.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-shield"/></svg></span><h3 data-i18n="skills.6.title"></h3><p data-i18n="skills.6.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-link"/></svg></span><h3 data-i18n="skills.7.title"></h3><p data-i18n="skills.7.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-layers"/></svg></span><h3 data-i18n="skills.8.title"></h3><p data-i18n="skills.8.body"></p></article>
+          <article class="skill-card"><span class="icon" aria-hidden="true"><svg><use href="#icon-folder"/></svg></span><h3 data-i18n="skills.9.title"></h3><p data-i18n="skills.9.body"></p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="exp.eyebrow">Erfarenhet</p>
+          <h2 id="experience-heading" data-i18n="exp.heading">Arbetslivserfarenhet</h2>
+          <p data-i18n="exp.sub">Underrubrik.</p>
+        </div>
+
+        <div class="timeline" data-reveal>
+          <article class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3 data-i18n="exp.1.role"></h3>
+                <span class="dates" data-i18n="exp.1.dates"></span>
+              </div>
+              <p class="company" data-i18n="exp.1.company"></p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b1"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b2"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b3"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b4"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b5"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.1.b6"></span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3 data-i18n="exp.2.role"></h3>
+                <span class="dates" data-i18n="exp.2.dates"></span>
+              </div>
+              <p class="company" data-i18n="exp.2.company"></p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.2.b1"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.2.b2"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.2.b3"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.2.b4"></span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <h3 data-i18n="exp.3.role"></h3>
+                <span class="dates" data-i18n="exp.3.dates"></span>
+              </div>
+              <p class="company" data-i18n="exp.3.company"></p>
+              <p class="note" data-i18n="exp.3.note"></p>
+              <ul>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.3.b1"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.3.b2"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.3.b3"></span></li>
+                <li><svg aria-hidden="true"><use href="#icon-check"/></svg><span data-i18n="exp.3.b4"></span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="alt-bg" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="projects.eyebrow">Utvalda initiativ</p>
+          <h2 id="projects-heading" data-i18n="projects.heading">Projekt &amp; initiativ</h2>
+          <p data-i18n="projects.sub">Underrubrik.</p>
+        </div>
+
+        <div class="projects-grid" data-reveal>
+          <article class="project-card">
+            <span class="project-tag" data-i18n="projects.1.tag"></span>
+            <h3 data-i18n="projects.1.title"></h3>
+            <div class="project-body">
+              <p data-i18n="projects.1.s"></p>
+              <p data-i18n="projects.1.a"></p>
+              <p data-i18n="projects.1.r"></p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Jira / Atlassian</span>
+              <span class="chip">Governance</span>
+              <span class="chip">DoR / DoD</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag" data-i18n="projects.2.tag"></span>
+            <h3 data-i18n="projects.2.title"></h3>
+            <div class="project-body">
+              <p data-i18n="projects.2.s"></p>
+              <p data-i18n="projects.2.a"></p>
+              <p data-i18n="projects.2.r"></p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Microsoft 365 Copilot</span>
+              <span class="chip">NIS2 / GDPR</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag" data-i18n="projects.3.tag"></span>
+            <h3 data-i18n="projects.3.title"></h3>
+            <div class="project-body">
+              <p data-i18n="projects.3.s"></p>
+              <p data-i18n="projects.3.a"></p>
+              <p data-i18n="projects.3.r"></p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Entra ID</span>
+              <span class="chip">Active Directory</span>
+              <span class="chip">RFI</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag" data-i18n="projects.4.tag"></span>
+            <h3 data-i18n="projects.4.title"></h3>
+            <div class="project-body">
+              <p data-i18n="projects.4.s"></p>
+              <p data-i18n="projects.4.a"></p>
+              <p data-i18n="projects.4.r"></p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">GitHub</span>
+              <span class="chip">Agile / Scrum</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" aria-labelledby="certifications-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="certs.eyebrow">Meriter</p>
+          <h2 id="certifications-heading" data-i18n="certs.heading">Certifieringar &amp; utbildning</h2>
+        </div>
+
+        <div class="cert-grid" data-reveal>
+          <article class="cert-card">
+            <span class="icon" aria-hidden="true"><svg><use href="#icon-award"/></svg></span>
+            <div>
+              <h3 data-i18n="certs.psm.title"></h3>
+              <p class="issuer" data-i18n="certs.psm.issuer"></p>
+              <p data-i18n="certs.psm.body"></p>
+              <a href="https://www.credly.com/org/scrum-org/badge/professional-scrum-master-i-psm-i" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="certs.psm.link"></span>
+                <svg aria-hidden="true"><use href="#icon-external"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="cert-card">
+            <span class="icon" aria-hidden="true"><svg><use href="#icon-cap"/></svg></span>
+            <div>
+              <h3 data-i18n="certs.edu.title"></h3>
+              <p class="issuer" data-i18n="certs.edu.issuer"></p>
+              <p data-i18n="certs.edu.body"></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOLS ============ -->
+    <section class="alt-bg" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="tools.eyebrow">Verktyg</p>
+          <h2 id="tools-heading" data-i18n="tools.heading">Verktyg &amp; metoder</h2>
+        </div>
+
+        <div class="tools-groups" data-reveal>
+          <div class="tools-group">
+            <h3 data-i18n="tools.group1">IAM &amp; Infrastruktur</h3>
+            <div class="chip-row">
+              <span class="chip">Microsoft Entra ID</span>
+              <span class="chip">Active Directory</span>
+              <span class="chip">Omada</span>
+              <span class="chip">IT/OT</span>
+            </div>
+          </div>
+          <div class="tools-group">
+            <h3 data-i18n="tools.group2">Projekt &amp; samarbete</h3>
+            <div class="chip-row">
+              <span class="chip">Jira</span>
+              <span class="chip">Confluence</span>
+              <span class="chip">Jira Service Management</span>
+              <span class="chip">Atlassian Suite</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">Microsoft 365 (Excel, Word, PowerPoint)</span>
+              <span class="chip" data-i18n="tools.chip.crm">CRM-system</span>
+            </div>
+          </div>
+          <div class="tools-group">
+            <h3 data-i18n="tools.group3">Metoder &amp; arbetssätt</h3>
+            <div class="chip-row">
+              <span class="chip">Scrum</span>
+              <span class="chip">Kanban</span>
+              <span class="chip" data-i18n="tools.chip.agile">Agila metoder</span>
+              <span class="chip" data-i18n="tools.chip.waterfall">Vattenfallsmetoder</span>
+              <span class="chip" data-i18n="tools.chip.workshop">Workshopledning</span>
+              <span class="chip">Stakeholder Management</span>
+              <span class="chip" data-i18n="tools.chip.planning">Projektplanering</span>
+              <span class="chip" data-i18n="tools.chip.governance">Projektstyrning</span>
+              <span class="chip" data-i18n="tools.chip.delivery">Projektleverans</span>
+              <span class="chip">Administration</span>
+            </div>
+          </div>
+          <div class="tools-group">
+            <h3 data-i18n="tools.group4">Strategi &amp; verksamhet</h3>
+            <div class="chip-row">
+              <span class="chip">PMO</span>
+              <span class="chip" data-i18n="tools.chip.bizgov">Verksamhetsstyrning</span>
+              <span class="chip">Enterprise Governance</span>
+              <span class="chip" data-i18n="tools.chip.transformation">Transformationsarbete</span>
+              <span class="chip" data-i18n="tools.chip.itbiz">IT/verksamhetsgränslandet</span>
+              <span class="chip" data-i18n="tools.chip.strategic">Strategisk projektledning</span>
+              <span class="chip" data-i18n="tools.chip.bizdev">Verksamhetsutveckling</span>
+              <span class="chip" data-i18n="tools.chip.itmgmt">IT-ledning</span>
+              <span class="chip" data-i18n="tools.chip.public">Offentlig sektor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+          <h2 id="contact-heading" data-i18n="contact.heading">Nyfiken på ett samarbete?</h2>
+          <p data-i18n="contact.sub">Underrubrik.</p>
+        </div>
+
+        <div class="contact-grid" data-reveal>
+          <div class="contact-cards">
+            <a class="contact-card" href="mailto:ibrahim.njie1995@gmail.com">
+              <span class="icon" aria-hidden="true"><svg><use href="#icon-mail"/></svg></span>
+              <span><span class="label" data-i18n="contact.email.label">E-post</span><br /><span class="value">ibrahim.njie1995@gmail.com</span></span>
+            </a>
+            <a class="contact-card" href="tel:+46704616256">
+              <span class="icon" aria-hidden="true"><svg><use href="#icon-phone"/></svg></span>
+              <span><span class="label" data-i18n="contact.phone.label">Telefon</span><br /><span class="value">070-461 62 56</span></span>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/ibrahim-njie-68446817b" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true"><svg><use href="#icon-link"/></svg></span>
+              <span><span class="label" data-i18n="contact.linkedin.label">LinkedIn</span><br /><span class="value">linkedin.com/in/ibrahim-njie</span></span>
+            </a>
+            <span class="contact-card contact-card--static">
+              <span class="icon" aria-hidden="true"><svg><use href="#icon-pin"/></svg></span>
+              <span><span class="label" data-i18n="contact.location.label">Plats</span><br /><span class="value" data-i18n="contact.location.value">Stockholm, Sverige</span></span>
+            </span>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <!-- Get a free access key at https://web3forms.com and replace the value below. -->
+            <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="Nytt meddelande via portfolio / New portfolio message" />
+            <input type="hidden" name="from_name" value="Portfolio — ibrahimnjie" />
+
+            <!-- Honeypot: hidden from real visitors, bots tend to fill it in. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-row">
+              <label for="name" data-i18n="contact.form.name">Namn</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email" data-i18n="contact.form.email">E-post</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message" data-i18n="contact.form.message">Meddelande</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <svg aria-hidden="true"><use href="#icon-mail"/></svg>
+              <span data-i18n="contact.form.submit">Skicka meddelande</span>
+            </button>
+
+            <p class="form-hint" data-i18n="contact.form.hint">Formulärnotis.</p>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Ibrahim Njie. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></p>
+      <p data-i18n="footer.built">Statisk sida — ingen spårning.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

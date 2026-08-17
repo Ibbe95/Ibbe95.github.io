@@ -1,0 +1,15 @@
+# Netlify-specific header config. Ignored by GitHub Pages (which cannot serve
+# custom HTTP headers at all) — kept here so this repo is ready to drop onto
+# Netlify/Cloudflare Pages later without redoing the security hardening.
+#
+# These add the protections a <meta> tag CANNOT provide (frame-ancestors,
+# X-Frame-Options, X-Content-Type-Options, Permissions-Policy, HSTS), on top
+# of the CSP already set via <meta http-equiv> in index.html.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; form-action 'self' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com

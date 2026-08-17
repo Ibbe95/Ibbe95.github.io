@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ibbe95.github.io/ftw/sitemap.xml

@@ -530,7 +530,7 @@
     if (cvLink) {
       cvLink.setAttribute(
         "href",
-        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=3" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=3"
+        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=4" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=4"
       );
     }
 

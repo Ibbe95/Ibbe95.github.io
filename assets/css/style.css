@@ -1293,6 +1293,36 @@ main {
   text-decoration: underline;
 }
 
+/* The external-link icon in these links had no size of its own, so the SVG
+   expanded to its intrinsic box — 180x150px — which stretched the link and
+   inflated the whole certificate card. This was live for a long time; it is
+   a rendering fault, invisible to contrast and target-size checks. Every
+   other inline icon on the page is sized explicitly; this one was missed. */
+.cert-card a svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Two stacked links per certificate: the certificate itself, then the
+   independent verification. Selector matches .cert-card a's specificity so
+   display: flex actually wins and each link takes its own row. */
+.cert-card a.cert-link-row {
+  display: flex;
+  width: fit-content;
+  min-height: 24px;
+}
+
+.cert-link-secondary {
+  margin-top: 0.25rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cert-link-secondary:hover {
+  color: var(--accent);
+}
+
 /* ---------- Tools --------------------------------------------------------- */
 .tools-groups {
   display: grid;

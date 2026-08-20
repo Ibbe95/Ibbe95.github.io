@@ -547,8 +547,12 @@ main {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(2rem, 5vw, 3.5rem);
-  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  /* Tightened so the stats strip clears the fold on a 1366x768 laptop —
+     the most common business screen. Before this the four headline numbers
+     started at 671px and ran to 815px, i.e. every label sat below the fold
+     and a scanning recruiter saw the page's strongest facts cut in half. */
+  padding-bottom: clamp(1.5rem, 2.8vw, 2.25rem);
   background: radial-gradient(120% 100% at 15% 0%, #0b1730 0%, var(--bg) 55%);
 }
 
@@ -663,21 +667,24 @@ main {
 }
 
 .hero .tagline {
-  margin-top: 1.25rem;
-  max-width: 46ch;
+  margin-top: 1.1rem;
+  /* 60ch rather than 46ch: still inside the 45-75ch readable range, but it
+     holds the tagline to two lines instead of three, which is what keeps
+     the stats strip above the fold on a 1366x768 laptop. */
+  max-width: 60ch;
   color: var(--text-muted);
   font-size: 1.1rem;
 }
 
 .hero-cta {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
 }
 
 .hero-meta {
-  margin-top: 2.25rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.1rem 1.75rem;
@@ -698,7 +705,12 @@ main {
 }
 
 .hero-visual-wrap {
-  max-width: 360px;
+  /* The photo column, not the text, sets the hero's height (4:5 ratio,
+     so 360px wide = 450px tall vs 417px of text). Capping it at 320px
+     hands the height back to the text column and is what actually gets
+     the stats strip above the fold on a 1366x768 laptop — trimming the
+     copy alone did nothing, because the copy was never the tall side. */
+  max-width: 320px;
   margin-inline: auto;
 }
 
@@ -776,7 +788,7 @@ main {
 
 /* ---------- Stats strip ---------------------------------------------- */
 .stats-section {
-  padding-block: 0 clamp(3rem, 6vw, 4rem);
+  padding-block: 0 clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .stats {
@@ -796,7 +808,7 @@ main {
 
 .stat {
   background: var(--surface);
-  padding: 1.5rem 1.25rem;
+  padding: 1.25rem 1.25rem;
   text-align: left;
 }
 

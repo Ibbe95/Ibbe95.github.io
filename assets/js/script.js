@@ -34,7 +34,7 @@
       "hero.badge": "Öppen för nya möjligheter",
       "hero.role": "IT-projektledare & IAM-koordinator",
       "hero.tagline":
-        "Jag koordinerar identitets- och behörighetsarbete i infrastruktur som Stockholm är beroende av varje dag.",
+        "Jag leder komplexa IT-projekt i samhällskritisk infrastruktur. Tekniken är sällan det svåra — det är människorna runt den.",
       "hero.ctaContact": "Kontakta mig",
       "hero.ctaCv": "Ladda ner CV",
       "hero.meta.location": "Stockholm, Sverige",
@@ -49,16 +49,16 @@
       "stats.budget.value": "25–50 Mkr",
       "stats.budget.label": "budgetomfattning i projekten jag arbetar i",
       "stats.people.value": "28",
-      "stats.people.label": "personer i 5 team på en gemensam tavla",
-      "stats.cert.value": "PSM I",
-      "stats.cert.label": "certifierad Scrum Master, scrum.org",
+      "stats.people.label": "personer i 5 team på tavlan jag äger",
+      "stats.forum.value": "12",
+      "stats.forum.label": "projektledare i forumet jag leder",
 
       "about.eyebrow": "Om mig",
       "about.heading": "Jag lärde mig intressenthantering innan jag lärde mig Jira",
       "about.body1":
         "Innan IT tillbringade jag fyra år med att driva en pool på ett tjugotal vårdkonsulter — förhandla avtal, hantera vitestvister och medla när en kund och en konsult faktiskt var oense. Ingenting lär dig intressenthantering snabbare än ett uppdrag som spricker en fredag eftermiddag.",
       "about.body2":
-        "2024 vidareutbildade jag mig: en YH-examen i IT-projektledning, sedan PSM I. I dag koordinerar jag IAM, IGA och identitetssäkerhet på Trafikförvaltningen, Region Stockholm — en miljö där fel behörighet inte är ett supportärende, utan en NIS2-fråga. Tekniken var ny för mig. Den där delen där femton personer vill olika saker och någon måste få det att gå ihop var det inte.",
+        "2024 vidareutbildade jag mig: en YH-examen i IT-projektledning, sedan PSM I. I dag koordinerar jag IAM, IGA och identitetssäkerhet på Trafikförvaltningen, Region Stockholm — en miljö där fel behörighet inte är ett supportärende, utan en NIS2-fråga. Området var nytt för mig. Den där delen där femton personer vill olika saker och någon måste få det att gå ihop var det inte.",
       "about.body3":
         "Det är kortversionen av varför jag jobbar som jag gör: jag tar hellre det obekväma samtalet tidigt än förvaltar en risklista full av sådant ingen ville säga högt.",
       "about.privacy":
@@ -227,7 +227,7 @@
       "hero.badge": "Open to new opportunities",
       "hero.role": "IT Project Manager & IAM Coordinator",
       "hero.tagline":
-        "I coordinate identity and access work in infrastructure that Stockholm depends on every day.",
+        "I lead complex IT projects in critical infrastructure. The technology is rarely the hard part — the people around it are.",
       "hero.ctaContact": "Get in touch",
       "hero.ctaCv": "Download CV",
       "hero.meta.location": "Stockholm, Sweden",
@@ -242,16 +242,16 @@
       "stats.budget.value": "25–50M SEK",
       "stats.budget.label": "budget scope of the projects I work in",
       "stats.people.value": "28",
-      "stats.people.label": "people across 5 teams on one shared board",
-      "stats.cert.value": "PSM I",
-      "stats.cert.label": "certified Scrum Master, scrum.org",
+      "stats.people.label": "people across 5 teams on the board I own",
+      "stats.forum.value": "12",
+      "stats.forum.label": "project managers in the forum I lead",
 
       "about.eyebrow": "About",
       "about.heading": "I learned stakeholder management before I learned Jira",
       "about.body1":
         "Before IT, I spent four years running a pool of around 20 healthcare consultants — negotiating contracts, handling penalty-clause disputes, and mediating when a client and a consultant genuinely disagreed. Nothing teaches you stakeholder management faster than a placement falling apart on a Friday afternoon.",
       "about.body2":
-        "In 2024 I retrained: a vocational degree (YH) in IT Project Management, then PSM I. Today I coordinate IAM, IGA, and identity security at Trafikförvaltningen, Region Stockholm — an environment where getting access wrong isn't a support ticket, it's a NIS2 question. The technology was new to me. The part where fifteen people want different things and someone has to make it add up was not.",
+        "In 2024 I retrained: a vocational degree (YH) in IT Project Management, then PSM I. Today I coordinate IAM, IGA, and identity security at Trafikförvaltningen, Region Stockholm — an environment where getting access wrong isn't a support ticket, it's a NIS2 question. The domain was new to me. The part where fifteen people want different things and someone has to make it add up was not.",
       "about.body3":
         "That's the short version of why I work the way I do: I'd rather have the uncomfortable conversation early than manage a risk register full of things nobody wanted to say out loud.",
       "about.privacy":

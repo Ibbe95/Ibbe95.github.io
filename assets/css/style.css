@@ -277,10 +277,15 @@ main {
   margin-bottom: clamp(2rem, 4vw, 3rem);
   padding-top: 1.1rem;
   border-top: 1px solid var(--border);
-  counter-increment: section;
 }
 
 .eyebrow {
+  /* The counter increments here, not on .section-head. The About section
+     has a bare .eyebrow with no .section-head wrapper, so it never
+     incremented and rendered "00" while every later section was off by
+     one. Tying the counter to the label itself numbers every section that
+     actually shows a label. */
+  counter-increment: section;
   display: block;
   font-family: var(--font-mono);
   font-size: 0.78rem;

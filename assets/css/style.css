@@ -767,6 +767,7 @@ main {
 .hero-portrait-link {
   display: inline-flex;
   align-items: center;
+  min-height: 24px;          /* WCAG 2.2 AA 2.5.8 — rendered 21px before */
   gap: 0.4rem;
   font-size: 0.83rem;
   font-weight: 600;
@@ -1494,6 +1495,12 @@ main {
 }
 
 .footer-inner nav a {
+  /* WCAG 2.2 AA 2.5.8 (Target Size, Minimum) wants at least 24x24 CSS px.
+     These links rendered 18px tall — a real miss on touch. inline-flex +
+     min-height grows the hit area without disturbing the footer rhythm. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   text-decoration: none;
   color: var(--text-faint);
 }

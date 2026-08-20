@@ -201,9 +201,9 @@
       "contact.form.hint":
         "Meddelandet skickas krypterat till min e-post via Web3Forms. Jag lagrar det inte på den här sidan, och det finns ingen spårning/analys.",
       "contact.form.success": "Tack! Meddelandet är skickat — jag återkommer så snart jag kan.",
-      "contact.form.error": "Något gick fel. Prova gärna igen, eller maila mig direkt på ibrahim.njie1995@gmail.com.",
+      "contact.form.error": "Något gick fel. Prova gärna igen, eller maila mig direkt på contact@ibrahimnjie.com.",
       "contact.form.notConfigured":
-        "Formuläret är inte aktiverat än — maila mig gärna direkt på ibrahim.njie1995@gmail.com så länge.",
+        "Formuläret är inte aktiverat än — maila mig gärna direkt på contact@ibrahimnjie.com så länge.",
 
       "footer.rights": "Alla rättigheter förbehållna.",
       "footer.top": "Till toppen",
@@ -394,9 +394,9 @@
       "contact.form.hint":
         "Your message is delivered to my email via Web3Forms. It isn't stored on this site, and there's no tracking or analytics.",
       "contact.form.success": "Thanks! Your message has been sent — I'll get back to you soon.",
-      "contact.form.error": "Something went wrong. Please try again, or email me directly at ibrahim.njie1995@gmail.com.",
+      "contact.form.error": "Something went wrong. Please try again, or email me directly at contact@ibrahimnjie.com.",
       "contact.form.notConfigured":
-        "The form isn't enabled yet — please email me directly at ibrahim.njie1995@gmail.com for now.",
+        "The form isn't enabled yet — please email me directly at contact@ibrahimnjie.com for now.",
 
       "footer.rights": "All rights reserved.",
       "footer.top": "Back to top",
@@ -474,7 +474,7 @@
     if (cvLink) {
       cvLink.setAttribute(
         "href",
-        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=4" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=4"
+        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=5" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=5"
       );
     }
 

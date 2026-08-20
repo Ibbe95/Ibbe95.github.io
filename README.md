@@ -5,13 +5,13 @@ paketberoenden, inga externa typsnitt eller skript-CDN:er. Det håller sidan
 snabb, enkel att underhålla och minimerar attackytan (se **Säkerhet** nedan).
 
 ## Viktigt vid varje CSS/JS-ändring: bumpa versionsnumret
-`index.html` laddar `style.css?v=30` och `script.js?v=30` — GitHub Pages
+`index.html` laddar `style.css?v=31` och `script.js?v=31` — GitHub Pages
 CDN (Fastly) cachar annars dessa filer aggressivt och besökare (och vi
 själva) kan se en gammal version i flera minuter efter en push, trots att
 koden på GitHub redan är korrekt. **Höj siffran med 1** i båda
 `<link>`/`<script>`-taggarna i `index.html` varje gång `style.css` eller
 `script.js` ändras — det tvingar fram en färsk hämtning direkt. Samma sak
-gäller CV-filerna (`?v=4`), som refereras både i `index.html` och i
+gäller CV-filerna (`?v=5`), som refereras både i `index.html` och i
 `script.js` (språkväxlingen byter fil) — båda måste bumpas ihop.
 
 ## Tillgänglighet: mät om innan du ändrar en färg

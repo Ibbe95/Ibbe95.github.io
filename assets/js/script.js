@@ -34,7 +34,7 @@
       "hero.badge": "Öppen för nya möjligheter",
       "hero.role": "IT-projektledare & IAM-koordinator",
       "hero.tagline":
-        "Jag koordinerar identitets- och behörighetsarbete i infrastruktur som Stockholm är beroende av varje dag. Jag kom in i IT via människor snarare än kod — därför är det svåraste i ett projekt sällan tekniken.",
+        "Jag koordinerar identitets- och behörighetsarbete i infrastruktur som Stockholm är beroende av varje dag.",
       "hero.ctaContact": "Kontakta mig",
       "hero.ctaCv": "Ladda ner CV",
       "hero.meta.location": "Stockholm, Sverige",
@@ -227,7 +227,7 @@
       "hero.badge": "Open to new opportunities",
       "hero.role": "IT Project Manager & IAM Coordinator",
       "hero.tagline":
-        "I coordinate identity and access work in infrastructure that Stockholm depends on every day. I came into IT through people rather than code — which is why the hardest part of a project, to me, is rarely the technology.",
+        "I coordinate identity and access work in infrastructure that Stockholm depends on every day.",
       "hero.ctaContact": "Get in touch",
       "hero.ctaCv": "Download CV",
       "hero.meta.location": "Stockholm, Sweden",

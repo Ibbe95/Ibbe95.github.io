@@ -34,6 +34,17 @@
   --accent-on: #04060c;
   --ink: #38bdf8;
   --ink-soft: #0b2436;
+  /* Signal amber: the page's single focal-point colour. Everything else is
+     blue, so one warm complementary accent gives the eye somewhere to land.
+     Deliberately used in exactly two places — the primary CTA and the small
+     section counters — because an accent that appears everywhere stops
+     being an accent. --signal is a FILL only (9.43:1 against --signal-on,
+     identical in both themes so the brand colour never flips);
+     --signal-text is the theme-aware variant for amber used as text. */
+  --signal: #f59e0b;
+  --signal-strong: #fbbf24;
+  --signal-on: #04060c;
+  --signal-text: #f59e0b;
   --danger: #f87171;
   --success: #34d399;
   --focus-ring: #6ba4ff;
@@ -87,6 +98,13 @@
   --accent-on: #ffffff;
   --ink: #06728c;
   --ink-soft: #dff4fa;
+  /* Fill stays the same amber (dark text on it clears 9.43:1 here too);
+     only the text variant darkens, since #f59e0b as text on a light
+     background is about 1.9:1. */
+  --signal: #f59e0b;
+  --signal-strong: #fbbf24;
+  --signal-on: #04060c;
+  --signal-text: #92400e;
   --danger: #cd2121;
   --success: #047854;
   --focus-ring: #1759ea;
@@ -275,7 +293,7 @@ main {
 
 .eyebrow::before {
   content: counter(section, decimal-leading-zero) "  —  ";
-  color: var(--accent);
+  color: var(--signal-text);
   font-weight: 600;
 }
 
@@ -314,15 +332,16 @@ main {
   white-space: nowrap;
 }
 
+/* The one warm element on an otherwise entirely blue page — see --signal. */
 .btn-primary {
-  background: var(--accent);
-  color: var(--accent-on);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
+  background: var(--signal);
+  color: var(--signal-on);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--signal) 38%, transparent);
 }
 
 .btn-primary:hover {
-  background: var(--accent-strong);
-  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 55%, transparent);
+  background: var(--signal-strong);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--signal) 58%, transparent);
 }
 
 .btn-secondary {
@@ -600,21 +619,47 @@ main {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent), 0 0 10px var(--success);
 }
 
+/* Name and role are sized as a two-line headline rather than a title with
+   a caption. A visitor who does not already know the name reads "Ibrahim
+   Njie" as a meaningless string; the role is what tells them whether to
+   keep reading, so it carries comparable weight (was a 3.7:1 size ratio,
+   now ~1.1:1). The name stays the <h1> for semantics and name-search SEO. */
+/* The name is the <h1> for semantics and name-search SEO, but it is set as
+   a kicker rather than the visual headline: a visitor who does not already
+   know the name reads "Ibrahim Njie" as a meaningless string, so the role
+   is what earns the largest type. Sizing them near-equal was worse than
+   either extreme — same serif, same colour, they read as one undifferen-
+   tiated block. Uppercase sans + muted colour separates them cleanly. */
 .hero h1 {
-  font-size: clamp(2.8rem, 7.5vw, 5.2rem);
+  font-size: clamp(1.1rem, 1.85vw, 1.45rem);
+  font-family: var(--font-sans);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 0.98;
-  text-shadow: 0 0 40px color-mix(in srgb, var(--accent) 30%, transparent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text-muted);
 }
 
 .hero .role {
-  margin-top: 0.75rem;
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 500;
-  font-style: italic;
+  margin-top: 0.6rem;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
   font-family: var(--font-display);
-  color: var(--ink);
+  color: var(--text);
+  /* balance evens out the ragged edge instead of leaving a stranded last
+     word; the ch cap only kicks in once there is room for it, so it cannot
+     force an awkward three-line break on a phone. */
+  text-wrap: balance;
+  text-shadow: 0 0 44px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+@media (min-width: 700px) {
+  .hero .role {
+    max-width: 15ch;
+  }
 }
 
 .hero .tagline {

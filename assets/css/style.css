@@ -17,11 +17,17 @@
   --bg-soft: #0a0f1c;
   --surface: #0d1424;
   --surface-2: #0a1120;
-  --border: #4a6091;
+  --border: #4e6598;
   --border-strong: #5878ab;
   --text: #e8edf8;
   --text-muted: #93a0bf;
-  --text-faint: #5b6884;
+  /* WCAG: --text-faint carries real small text (eyebrows, dates, footer
+     links, form hints), not decoration, so it must clear 4.5:1 — not the
+     3:1 that would apply to large or purely decorative text. Measured
+     against the darkest surface it lands on (--surface #0d1424) it now
+     sits at 4.69:1. Hierarchy below --text-muted is carried by size,
+     weight and letter-spacing instead of by lower contrast. */
+  --text-faint: #73819e;
   --accent: #4c8dff;
   --accent-strong: #85b4ff;
   --accent-soft: #101d38;
@@ -68,20 +74,39 @@
   --border-strong: #6c7ba5;
   --text: #0b1220;
   --text-muted: #4a5670;
-  --text-faint: #717d99;
-  --accent: #2563eb;
+  /* All five values below were raised to clear 4.5:1 against every surface
+     they actually appear on (--bg, --bg-soft, --surface, --accent-soft).
+     The light theme previously failed on seven pairs — including the hero
+     role line (--ink) and the form's success message. Hue and saturation
+     are preserved; only lightness moved, so the palette still reads the
+     same. Re-run the contrast check before changing any of them. */
+  --text-faint: #5e6983;
+  --accent: #1759ea;
   --accent-strong: #1d4ed8;
   --accent-soft: #dde8fc;
   --accent-on: #ffffff;
-  --ink: #0891b2;
+  --ink: #06728c;
   --ink-soft: #dff4fa;
-  --danger: #dc2626;
-  --success: #059669;
-  --focus-ring: #2563eb;
+  --danger: #cd2121;
+  --success: #047854;
+  --focus-ring: #1759ea;
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
   --glow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Applied by toggleTheme() for a single frame while data-theme changes.
+   See the comment in script.js: transitioning a property whose value comes
+   from a custom property can leave the element painted with the previous
+   theme's token indefinitely. Suppressing transitions during the swap is
+   the general fix; it also makes the change feel instant rather than
+   half-animated. */
+:root.theme-switching,
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after {
+  transition: none !important;
 }
 
 /* ---------- Reset ------------------------------------------------------ */
@@ -627,14 +652,6 @@ main {
   color: var(--accent);
 }
 
-/* Hero visual panel: a single clean LinkedIn callout card — no offset
-   double-frame, just one confident surface with the platform's own blue
-   as a deliberate, meaningful accent (this card only). */
-:root {
-  --linkedin-blue: #0a66c2;
-  --linkedin-blue-soft: rgba(10, 102, 194, 0.14);
-}
-
 .hero-visual-wrap {
   max-width: 360px;
   margin-inline: auto;
@@ -642,93 +659,74 @@ main {
 
 .hero-visual {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   background: color-mix(in srgb, var(--surface-2) 92%, transparent);
-  backdrop-filter: blur(8px);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 
-.hero-linkedin {
-  display: flex;
-  flex-direction: column;
+/* ---------- Hero portrait --------------------------------------------
+   The photo is the panel: it fills the card edge to edge, with the name
+   and LinkedIn link sitting on a scrim at the bottom. The scrim is a
+   solid-to-transparent gradient (not a blanket opacity) so the caption
+   text keeps full contrast while the top of the image stays untouched.
+   -------------------------------------------------------------------- */
+.hero-portrait {
+  margin: 0;
+}
+
+.hero-portrait img {
+  width: 100%;
   height: 100%;
-  padding: clamp(1.5rem, 4vw, 2.25rem);
-  text-decoration: none;
-  color: var(--text);
-  transition: border-color var(--transition-fast), background var(--transition-fast),
-    box-shadow var(--transition-fast);
+  object-fit: cover;
+  object-position: 50% 22%;
+  display: block;
 }
 
-.hero-linkedin:hover {
-  border-color: var(--linkedin-blue);
-  background: var(--linkedin-blue-soft);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--linkedin-blue) 45%, transparent),
-    0 0 26px color-mix(in srgb, var(--linkedin-blue) 30%, transparent);
-}
-
-.hero-linkedin-top {
+.hero-portrait-cap {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  padding: 2.75rem 1.15rem 1rem;
+  background: linear-gradient(180deg, transparent 0%,
+    color-mix(in srgb, #04070e 72%, transparent) 45%, #04070e 100%);
 }
 
-.hero-linkedin-icon-wrap {
-  width: 2.4rem;
-  height: 2.4rem;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--linkedin-blue-soft);
-  color: var(--linkedin-blue);
-}
-
-.hero-linkedin-icon {
-  width: 1.15rem;
-  height: 1.15rem;
-}
-
-.hero-linkedin-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.hero-linkedin-name {
-  margin-top: 1.25rem;
+.hero-portrait-name {
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: #f2f5fc;
 }
 
-.hero-linkedin-sub {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  max-width: 22ch;
-}
-
-.hero-linkedin-cta {
-  margin-top: auto;
-  align-self: flex-start;
-  padding-top: 1.75rem;
+.hero-portrait-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  font-size: 0.83rem;
   font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--linkedin-blue);
+  text-decoration: none;
+  /* Fixed light value rather than a token: this text always sits on the
+     dark photo scrim, in both themes. #7fb0ff on #04070e = 7.6:1. */
+  color: #7fb0ff;
+  transition: color var(--transition-fast);
 }
 
-.hero-linkedin-cta svg {
-  width: 1rem;
-  height: 1rem;
+.hero-portrait-link:hover {
+  color: #ffffff;
+}
+
+.hero-portrait-link svg {
+  width: 0.9rem;
+  height: 0.9rem;
 }
 
 /* ---------- Stats strip ---------------------------------------------- */

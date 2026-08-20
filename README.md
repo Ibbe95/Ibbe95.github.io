@@ -5,12 +5,32 @@ paketberoenden, inga externa typsnitt eller skript-CDN:er. Det håller sidan
 snabb, enkel att underhålla och minimerar attackytan (se **Säkerhet** nedan).
 
 ## Viktigt vid varje CSS/JS-ändring: bumpa versionsnumret
-`index.html` laddar `style.css?v=15` och `script.js?v=15` — GitHub Pages
+`index.html` laddar `style.css?v=21` och `script.js?v=21` — GitHub Pages
 CDN (Fastly) cachar annars dessa filer aggressivt och besökare (och vi
 själva) kan se en gammal version i flera minuter efter en push, trots att
 koden på GitHub redan är korrekt. **Höj siffran med 1** i båda
 `<link>`/`<script>`-taggarna i `index.html` varje gång `style.css` eller
-`script.js` ändras — det tvingar fram en färsk hämtning direkt.
+`script.js` ändras — det tvingar fram en färsk hämtning direkt. Samma sak
+gäller CV-filerna (`?v=4`), som refereras både i `index.html` och i
+`script.js` (språkväxlingen byter fil) — båda måste bumpas ihop.
+
+## Tillgänglighet: mät om innan du ändrar en färg
+Alla färgtokens i `:root` och `:root[data-theme="light"]` är valda för att
+klara **WCAG AA** (4,5:1 för text, 3:1 för gränssnittsytor) mot *varje*
+bakgrund de faktiskt hamnar på — inte bara mot `--bg`. Ändra dem inte på
+känsla. Tre fallgropar som redan kostat tid:
+
+- `--text-faint` bär riktig småtext (eyebrows, datum, footer-länkar,
+  formulärhjälp), inte dekor. Den måste klara 4,5:1, inte 3:1.
+- Mät på **renderade** element, inte bara på tokenlistan. Chrome
+  serialiserar `color-mix()` som `color(srgb 0.95 0.96 …)` med 0–1-flyttal,
+  och halvtransparenta lager (header, hero-badge) måste komposit-räknas mot
+  det som ligger bakom — annars får du falska larm.
+- Sätt inte tillbaka `transition` på `color` under temabyte. Se
+  `.theme-switching` i `style.css` och `toggleTheme()` i `script.js`:
+  en färg som kommer från en custom property kan annars frysa på det
+  gamla temats värde (kontaktkortet fastnade på ljus text mot ljus
+  bakgrund, 1,08:1 — praktiskt taget osynligt).
 
 ## Struktur
 ```
@@ -18,6 +38,8 @@ index.html              Hela sidan (en sida, ankarlänkar mellan sektioner)
 assets/css/style.css     Design, layout, ljust/mörkt läge
 assets/js/script.js      Språkväxling (SV/EN), tema, meny, kontaktformulär
 assets/img/favicon.svg   Ikon (initialer "IN")
+assets/img/ibrahim-njie*.jpg  Porträtt i hero (768w + 400w via srcset)
+assets/img/og-image.jpg  1200x630 delningsbild för LinkedIn/X/Slack
 assets/cv/*.pdf          CV att ladda ner, SV + EN
 manifest.json            Grundläggande web app-manifest
 robots.txt, sitemap.xml  För sökmotorer
@@ -25,6 +47,18 @@ _headers, vercel.json    Extra säkerhetsheaders — används INTE av GitHub
                          Pages (som inte stödjer egna headers), men redo om
                          sidan någon gång flyttas till Netlify/Vercel
 ```
+
+## SEO
+Den strukturerade datan (`schema.org/Person`, JSON-LD i `<head>`) är den
+enskilt viktigaste SEO-posten på sidan — det är den som gör att en
+Google-sökning på namnet ger ett vettigt resultat. Dess `knowsAbout`-lista
+bär även den långa svansen av nyckelord (IAM-verktyg, metoder,
+governance-termer). Det är därför den synliga "Verktyg"-sektionen kan hållas
+kort utan att sidan tappar sökbarhet — **lägg nya nyckelord i `knowsAbout`
+i stället för att fylla på med fler chips.**
+
+Om bilderna byts: `og:image` måste vara en **absolut** URL och 1200x630,
+annars faller LinkedIn-förhandsvisningen tillbaka till en tom ruta.
 
 ## Innehåll & källa
 Allt innehåll (profiltext, erfarenhet, kompetenser) är hämtat från
@@ -128,13 +162,14 @@ Sidan är designad för minimal attackyta:
   (Vercel) i repot ger fullt skydd om sidan någon gång flyttas dit — GitHub
   Pages ger ändå HTTPS automatiskt, vilket täcker det viktigaste.
 
-## Byta ut platshållar-innehåll
-- **Hero-panelen:** visar en LinkedIn-kontaktkort istället för foto (medvetet
-  val — se `.hero-linkedin` i `index.html`/`style.css`). Länken pekar mot
-  `https://www.linkedin.com/in/ibrahim-njie-68446817b/`. `assets/img/`
-  används inte längre av sidan (favicon.svg undantaget).
+## Byta ut innehåll
+- **Hero-panelen:** porträttfoto (`.hero-portrait`) med namn och
+  LinkedIn-länk på en mörk gradient längst ned. Byts bilden ut: behåll
+  4:5-format, exportera både 768w och 400w (`srcset`), och kontrollera att
+  bildtextens färger fortfarande håller mot den nya bilden — texten ligger
+  på en scrim som bara är ~72 % täckande i överkanten.
 - **CV:** ligger i `assets/cv/`. Ersätt filerna när du uppdaterar ditt CV
-  (behåll samma filnamn så slipper du ändra kod).
+  (behåll samma filnamn så slipper du ändra kod, men bumpa `?v=`).
 
 ## Lokal förhandsgranskning
 Öppna `index.html` direkt i webbläsaren, eller kör en enkel lokal server

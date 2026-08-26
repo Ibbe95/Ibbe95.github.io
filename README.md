@@ -5,7 +5,7 @@ paketberoenden, inga externa typsnitt eller skript-CDN:er. Det håller sidan
 snabb, enkel att underhålla och minimerar attackytan (se **Säkerhet** nedan).
 
 ## Viktigt vid varje CSS/JS-ändring: bumpa versionsnumret
-`index.html` laddar `style.css?v=38` och `script.js?v=38` — GitHub Pages
+`index.html` laddar `style.css?v=39` och `script.js?v=39` — GitHub Pages
 CDN (Fastly) cachar annars dessa filer aggressivt och besökare (och vi
 själva) kan se en gammal version i flera minuter efter en push, trots att
 koden på GitHub redan är korrekt. **Höj siffran med 1** i båda
@@ -13,6 +13,31 @@ koden på GitHub redan är korrekt. **Höj siffran med 1** i båda
 `script.js` ändras — det tvingar fram en färsk hämtning direkt. Samma sak
 gäller CV-filerna (`?v=5`), som refereras både i `index.html` och i
 `script.js` (språkväxlingen byter fil) — båda måste bumpas ihop.
+
+## Byta status när du får jobb
+Badgen i hero styrs av **ett ord** i `index.html`:
+
+```html
+<body data-availability="open">
+```
+
+| Värde | Text | Prick |
+|---|---|---|
+| `open` | Öppen för nya möjligheter / Open to new opportunities | Grön |
+| `engaged` | I uppdrag — öppen för rätt samtal / In a role — open to the right conversation | Blå |
+
+Byt ordet, committa, pusha. Live inom en minut. Texten finns på båda
+språken, så språkväxlingen fortsätter fungera i båda lägena.
+
+**Förhandsgranska utan att publicera:** lägg till `?availability=engaged`
+i adressfältet. Det ändrar bara din egen vy, sparas inte, och försvinner
+när du tar bort parametern — så du kan inte råka bli kvar i fel läge.
+
+Varför inte en inloggad admin-vy: sidan är statisk och har ingen server.
+Allt som körs i webbläsaren syns i källkoden, så ett "lösenord" vore
+teater — och en toggle som sparas lokalt hade bara ändrat vad *du* ser,
+inte vad besökare får serverat. Ett ord i repot är den enda varianten där
+"bara du kan ändra det" faktiskt är sant.
 
 ## Tillgänglighet: mät om innan du ändrar en färg
 Alla färgtokens i `:root` och `:root[data-theme="light"]` är valda för att

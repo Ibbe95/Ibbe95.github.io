@@ -42,7 +42,7 @@
   <link rel="canonical" href="https://ibrahimnjie.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="assets/css/style.css?v=38" />
+  <link rel="stylesheet" href="assets/css/style.css?v=39" />
 
   <!-- Structured data (schema.org Person). This is what lets Google show a
        proper result for a name search — the single highest-value SEO item
@@ -156,7 +156,16 @@
        proxied — automatic injection wouldn't see this site's traffic). -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9fdd1d09bd8e4d608bf1d146dd9676aa"}'></script>
 </head>
-<body>
+<!-- ===================================================================
+     TILLGÄNGLIGHETSSTATUS — ändra ETT ord här när du byter jobb.
+       "open"    = Öppen för nya möjligheter   (grön prick)
+       "engaged" = I uppdrag, men hör gärna av dig (blå prick)
+     Spara, committa, pusha. Live inom en minut.
+     Förhandsgranska utan att publicera: lägg till ?availability=engaged
+     eller ?availability=open i adressfältet. Det ändrar bara din egen vy
+     och sparas inte — ta bort parametern så visas det publicerade läget.
+     =================================================================== -->
+<body data-availability="open">
   <a class="skip-link" href="#main" data-i18n="nav.skipToContent">Skip to content</a>
 
   <!-- Icon sprite: hand-drawn minimal line icons, no external icon library. -->
@@ -242,7 +251,7 @@
       <canvas id="network-canvas" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div>
-          <p class="hero-badge"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.badge">Open to new opportunities</span></p>
+          <p class="hero-badge"><span class="dot" aria-hidden="true"></span><span id="availability-text" data-i18n="hero.badge">Open to new opportunities</span></p>
           <h1>Ibrahim Njie</h1>
           <p class="role" data-i18n="hero.role">IT Project Manager &amp; IAM Coordinator</p>
           <p class="tagline" data-i18n="hero.tagline">I lead complex IT projects in critical infrastructure. The technology is rarely the hard part — the people around it are.</p>
@@ -746,6 +755,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js?v=38"></script>
+  <script src="assets/js/script.js?v=39"></script>
 </body>
 </html>

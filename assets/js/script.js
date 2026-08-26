@@ -33,6 +33,7 @@
       "nav.skipToContent": "Hoppa till innehåll",
 
       "hero.badge": "Öppen för nya möjligheter",
+      "hero.badgeEngaged": "I uppdrag — öppen för rätt samtal",
       "hero.role": "IT-projektledare & IAM-koordinator",
       "hero.tagline":
         "Jag leder komplexa IT-projekt i samhällskritisk infrastruktur. Tekniken är sällan det svåra — det är människorna runt den.",
@@ -238,6 +239,7 @@
       "nav.skipToContent": "Skip to content",
 
       "hero.badge": "Open to new opportunities",
+      "hero.badgeEngaged": "In a role — open to the right conversation",
       "hero.role": "IT Project Manager & IAM Coordinator",
       "hero.tagline":
         "I lead complex IT projects in critical infrastructure. The technology is rarely the hard part — the people around it are.",
@@ -881,6 +883,35 @@
   /* ----------------------------------------------------------------
    * Wire up header controls + init
    * ------------------------------------------------------------- */
+  /* ----------------------------------------------------------------
+   * Availability status
+   *
+   * The published state is one word in <body data-availability="...">,
+   * so changing it is an edit-and-push, not a click. That is deliberate:
+   * this site is static, so any in-page "admin toggle" would either be
+   * visible to everyone in the source, or only change what THIS browser
+   * sees — neither of which changes what a visitor gets served.
+   *
+   * ?availability=open|engaged overrides it for PREVIEW only. It is never
+   * written to localStorage, so dropping the parameter always shows the
+   * published state and you cannot accidentally leave yourself looking
+   * at the wrong one.
+   * ------------------------------------------------------------- */
+  function initAvailability() {
+    const requested = new URLSearchParams(location.search).get("availability");
+    const state =
+      requested === "open" || requested === "engaged"
+        ? requested
+        : document.body.getAttribute("data-availability") || "open";
+    document.body.setAttribute("data-availability", state);
+    const el = document.getElementById("availability-text");
+    if (el) {
+      // Swap the i18n key rather than the text, so the language toggle
+      // keeps working for whichever state is active.
+      el.setAttribute("data-i18n", state === "engaged" ? "hero.badgeEngaged" : "hero.badge");
+    }
+  }
+
   function initControls() {
     const themeBtn = document.getElementById("theme-toggle");
     if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
@@ -894,6 +925,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
+    initAvailability();
     applyLang(getLang());
     initControls();
     initNetworkCanvas();

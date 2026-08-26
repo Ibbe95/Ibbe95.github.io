@@ -628,6 +628,15 @@ main {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent), 0 0 10px var(--success);
 }
 
+/* Status "engaged": in a role but still reachable. Blue rather than amber
+   on purpose — amber is reserved for the primary CTA, and a second warm
+   element would compete with it. Blue reads as informational, not as a
+   warning, which matches the message. */
+[data-availability="engaged"] .hero-badge .dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent), 0 0 10px var(--accent);
+}
+
 /* Name and role are sized as a two-line headline rather than a title with
    a caption. A visitor who does not already know the name reads "Ibrahim
    Njie" as a meaningless string; the role is what tells them whether to

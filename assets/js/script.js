@@ -43,7 +43,7 @@
       "hero.meta.lang": "Svenska & engelska",
       "hero.meta.cert": "PSM I-certifierad",
       "hero.photoAlt":
-        "Ibrahim Njie, IT-projektledare och IAM-koordinator, fotograferad på ett kontor i Stockholm",
+        "Ibrahim Njie, IT/OT Security Coordinator, fotograferad på ett kontor i Stockholm",
       "hero.linkedin.cta": "LinkedIn-profil",
 
       "stats.identities.value": "30 000+",
@@ -80,7 +80,7 @@
       "skills.heading": "Kärnkompetenser",
       "skills.sub": "Ett urval av det jag arbetar med dagligen — från agil koordinering till identitetssäkerhet.",
       "skills.0.title": "IT/OT-säkerhet & segmentering",
-      "skills.0.body": "Segmenterade zoner enligt Purdue-modellen, gränsen mellan SCADA och IT, med NIST CSF och NIS2 som styrande ram.",
+      "skills.0.body": "Segmenterade zoner enligt Purdue-modellen och gränsen mellan SCADA och IT, nära SOC och centralt IT Security-team, med NIST CSF och NIS2 som styrande ram.",
       "skills.1.title": "IAM, IGA & identitetsplattformar",
       "skills.1.body": "Identitetslivscykler och behörighetsstyrning i Entra ID, Active Directory och Omada — för både mänskliga och icke-mänskliga identiteter.",
       "skills.2.title": "IT-projektledning & agil leverans",
@@ -104,6 +104,7 @@
       "exp.0.b2": "Arbetar med segmenterade zoner och systemsegmentering enligt Purdue-modellen, över gränsen mellan SCADA/OT och IT",
       "exp.0.b3": "Tillämpar NIST CSF och NIS2 som styrande ramverk för säkerhetsarbetet i hela verksamheten",
       "exp.0.b4": "Håller bred internationell stakeholder-kontakt över flera länder — inklusive leverantörer och deras egna underleverantörer",
+      "exp.0.b6": "Arbetar nära det centrala IT Security-teamet och SOC:en, samt med compliance-arbete i hela verksamheten",
       "exp.0.b5": "Deltar i IT- och säkerhetsrelaterade initiativ över hela verksamheten, med återkommande resor mellan anläggningar i flera länder",
       "exp.1.role": "IT-Projektledare / IAM-koordinator",
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
@@ -263,7 +264,7 @@
       "hero.meta.lang": "Swedish & English",
       "hero.meta.cert": "PSM I certified",
       "hero.photoAlt":
-        "Ibrahim Njie, IT Project Manager and IAM Coordinator, photographed in an office in Stockholm",
+        "Ibrahim Njie, IT/OT Security Coordinator, photographed in an office in Stockholm",
       "hero.linkedin.cta": "LinkedIn profile",
 
       "stats.identities.value": "30,000+",
@@ -300,7 +301,7 @@
       "skills.heading": "Core competencies",
       "skills.sub": "A selection of what I work with day to day — from agile coordination to identity security.",
       "skills.0.title": "IT/OT security & segmentation",
-      "skills.0.body": "Segmented zones along the Purdue model, the boundary between SCADA and IT, with NIST CSF and NIS2 as the governing frame.",
+      "skills.0.body": "Segmented zones along the Purdue model and the SCADA/IT boundary, close to the SOC and the central IT Security team, with NIST CSF and NIS2 as the governing frame.",
       "skills.1.title": "IAM, IGA & identity platforms",
       "skills.1.body": "Identity lifecycles and access governance across Entra ID, Active Directory, and Omada — human and non-human alike.",
       "skills.2.title": "IT project management & agile delivery",
@@ -324,6 +325,7 @@
       "exp.0.b2": "Work with segmented zones and system segmentation along the Purdue model, across the boundary between SCADA/OT and IT",
       "exp.0.b3": "Apply NIST CSF and NIS2 as the governing frameworks for security work across the business",
       "exp.0.b4": "Hold broad international stakeholder contact across several countries — including suppliers and their own subcontractors",
+      "exp.0.b6": "Work closely with the central IT Security team and the SOC, and with compliance work across the business",
       "exp.0.b5": "Take part in IT and security initiatives across the entire business, with regular travel between sites in several countries",
       "exp.1.role": "IT Project Manager / IAM Coordinator",
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
@@ -528,7 +530,7 @@
     if (cvLink) {
       cvLink.setAttribute(
         "href",
-        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=6" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=6"
+        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=7" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=7"
       );
     }
 

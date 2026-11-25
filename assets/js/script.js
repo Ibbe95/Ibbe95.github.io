@@ -17,9 +17,9 @@
    * ------------------------------------------------------------- */
   const dict = {
     sv: {
-      "meta.title": "Ibrahim Njie — IT-projektledare & IAM-koordinator, Stockholm",
+      "meta.title": "Ibrahim Njie — IT/OT Security Coordinator, Stockholm",
       "meta.description":
-        "IT-projektledare & IAM-koordinator i Stockholm — IAM/IGA för 30 000+ identiteter i samhällskritisk infrastruktur. PSM I-certifierad. Portfolio & CV.",
+        "IT/OT Security Coordinator på Boliden — zoner enligt Purdue-modellen, SCADA/IT-segmentering, NIST CSF och NIS2 över smältverk i flera länder. Stockholm. PSM I-certifierad.",
       "nav.about": "Om mig",
       "nav.experience": "Erfarenhet",
       "nav.skills": "Kompetens",
@@ -34,9 +34,9 @@
 
       "hero.badge": "Öppen för nya möjligheter",
       "hero.badgeEngaged": "I uppdrag — öppen för rätt samtal",
-      "hero.role": "IT-projektledare & IAM-koordinator",
+      "hero.role": "IT/OT Security Coordinator",
       "hero.tagline":
-        "Jag leder komplexa IT-projekt i samhällskritisk infrastruktur. Tekniken är sällan det svåra — det är människorna runt den.",
+        "Jag koordinerar säkerhet över IT och OT i samhällskritisk infrastruktur. Tekniken är sällan det svåra — det är människorna runt den.",
       "hero.ctaContact": "Kontakta mig",
       "hero.ctaCv": "Ladda ner CV",
       "hero.meta.location": "Stockholm, Sverige",
@@ -52,15 +52,17 @@
       "stats.budget.label": "budgetomfattning i projekten jag arbetat i",
       "stats.people.value": "28",
       "stats.people.label": "personer i 5 team på tavlan jag ägde",
-      "stats.forum.value": "12",
-      "stats.forum.label": "projektledare i forumet jag ledde",
+      "stats.smelters.value": "5",
+      "stats.smelters.label": "smältverkschefer i nära samarbete",
 
       "about.eyebrow": "Om mig",
       "about.heading": "Jag lärde mig intressenthantering innan jag lärde mig Jira",
       "about.body1":
         "Innan IT tillbringade jag fyra år med att driva en pool på ett tjugotal vårdkonsulter — förhandla avtal, hantera vitestvister och medla när en kund och en konsult faktiskt var oense. Ingenting lär dig intressenthantering snabbare än ett uppdrag som spricker en fredag eftermiddag.",
       "about.body2":
-        "2024 vidareutbildade jag mig: en YH-examen i IT-projektledning, sedan PSM I. Senast koordinerade jag IAM, IGA och identitetssäkerhet på Trafikförvaltningen, Region Stockholm — en miljö där fel behörighet inte är ett supportärende, utan en NIS2-fråga. Området var nytt för mig. Den där delen där femton personer vill olika saker och någon måste få det att gå ihop var det inte.",
+        "2024 vidareutbildade jag mig: en YH-examen i IT-projektledning, sedan PSM I. På Trafikförvaltningen, Region Stockholm koordinerade jag IAM, IGA och identitetssäkerhet — en miljö där fel behörighet inte är ett supportärende, utan en NIS2-fråga. Området var nytt för mig. Den där delen där femton personer vill olika saker och någon måste få det att gå ihop var det inte.",
+      "about.bodyNow":
+        "I dag är jag på Boliden som IT/OT Security Coordinator och arbetar över smältverk i flera länder — zoner enligt Purdue-modellen, SCADA på ena sidan gränsen och IT på den andra, med NIST CSF och NIS2 som ram. Annan bransch, samma sorts problem: många parter som alla behöver samma bild.",
       "about.body3":
         "Det är kortversionen av varför jag jobbar som jag gör: jag tar hellre det obekväma samtalet tidigt än förvaltar en risklista full av sådant ingen ville säga högt.",
       "about.privacy":
@@ -77,6 +79,8 @@
       "skills.eyebrow": "Kompetens",
       "skills.heading": "Kärnkompetenser",
       "skills.sub": "Ett urval av det jag arbetar med dagligen — från agil koordinering till identitetssäkerhet.",
+      "skills.0.title": "IT/OT-säkerhet & segmentering",
+      "skills.0.body": "Segmenterade zoner enligt Purdue-modellen, gränsen mellan SCADA och IT, med NIST CSF och NIS2 som styrande ram.",
       "skills.1.title": "IAM, IGA & identitetsplattformar",
       "skills.1.body": "Identitetslivscykler och behörighetsstyrning i Entra ID, Active Directory och Omada — för både mänskliga och icke-mänskliga identiteter.",
       "skills.2.title": "IT-projektledning & agil leverans",
@@ -92,7 +96,15 @@
 
       "exp.eyebrow": "Erfarenhet",
       "exp.heading": "Arbetslivserfarenhet",
-      "exp.sub": "Från samhällskritisk IAM-koordinering till leveransansvar för en konsultpool på 20 personer.",
+      "exp.sub": "Från IT/OT-säkerhet över smältverk till IAM-koordinering i samhällskritisk transportinfrastruktur.",
+      "exp.0.role": "IT/OT Security Coordinator",
+      "exp.0.company": "Boliden",
+      "exp.0.dates": "2026–pågående",
+      "exp.0.b1": "Koordinerar IT/OT-säkerhet över koncernens smältverk, i nära samarbete med fem smältverkschefer",
+      "exp.0.b2": "Arbetar med segmenterade zoner och systemsegmentering enligt Purdue-modellen, över gränsen mellan SCADA/OT och IT",
+      "exp.0.b3": "Tillämpar NIST CSF och NIS2 som styrande ramverk för säkerhetsarbetet i hela verksamheten",
+      "exp.0.b4": "Håller bred internationell stakeholder-kontakt över flera länder — inklusive leverantörer och deras egna underleverantörer",
+      "exp.0.b5": "Deltar i IT- och säkerhetsrelaterade initiativ över hela verksamheten, med återkommande resor mellan anläggningar i flera länder",
       "exp.1.role": "IT-Projektledare / IAM-koordinator",
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
       "exp.1.dates": "2025–2026",
@@ -179,13 +191,15 @@
 
       "tools.eyebrow": "Verktyg",
       "tools.heading": "Verktyg & metoder",
-      "tools.group1": "IAM & Infrastruktur",
+      "tools.group1": "IAM, OT & infrastruktur",
       "tools.group2": "Projekt & samarbete",
       "tools.group3": "Metoder & arbetssätt",
       "tools.group4": "Strategi & verksamhet",
       "tools.group5": "AI & automatisering",
       "tools.showMore": "Visa {n} till",
       "tools.showLess": "Visa färre",
+      "tools.chip.purdue": "Purdue-modellen",
+      "tools.chip.segmentation": "Nätverkssegmentering",
       "tools.chip.agilewaterfall": "Agilt & vattenfall",
       "tools.chip.workshop": "Workshopledning",
       "tools.chip.agilecoach": "Agil coach",
@@ -223,9 +237,9 @@
     },
 
     en: {
-      "meta.title": "Ibrahim Njie — IT Project Manager & IAM Coordinator, Stockholm",
+      "meta.title": "Ibrahim Njie — IT/OT Security Coordinator, Stockholm",
       "meta.description":
-        "IT Project Manager & IAM Coordinator in Stockholm — IAM/IGA across 30,000+ identities in society-critical infrastructure. PSM I certified. Portfolio & CV.",
+        "IT/OT Security Coordinator at Boliden — Purdue-model zones, SCADA/IT segmentation, NIST CSF and NIS2 across smelters in several countries. Stockholm. PSM I certified.",
       "nav.about": "About",
       "nav.experience": "Experience",
       "nav.skills": "Skills",
@@ -240,9 +254,9 @@
 
       "hero.badge": "Open to new opportunities",
       "hero.badgeEngaged": "In a role — open to the right conversation",
-      "hero.role": "IT Project Manager & IAM Coordinator",
+      "hero.role": "IT/OT Security Coordinator",
       "hero.tagline":
-        "I lead complex IT projects in critical infrastructure. The technology is rarely the hard part — the people around it are.",
+        "I coordinate security across IT and OT in critical infrastructure. The technology is rarely the hard part — the people around it are.",
       "hero.ctaContact": "Get in touch",
       "hero.ctaCv": "Download CV",
       "hero.meta.location": "Stockholm, Sweden",
@@ -258,15 +272,17 @@
       "stats.budget.label": "budget scope of the projects I've worked in",
       "stats.people.value": "28",
       "stats.people.label": "people across 5 teams on the board I owned",
-      "stats.forum.value": "12",
-      "stats.forum.label": "project managers in the forum I led",
+      "stats.smelters.value": "5",
+      "stats.smelters.label": "smelter managers in close collaboration",
 
       "about.eyebrow": "About",
       "about.heading": "I learned stakeholder management before I learned Jira",
       "about.body1":
         "Before IT, I spent four years running a pool of around 20 healthcare consultants — negotiating contracts, handling penalty-clause disputes, and mediating when a client and a consultant genuinely disagreed. Nothing teaches you stakeholder management faster than a placement falling apart on a Friday afternoon.",
       "about.body2":
-        "In 2024 I retrained: a vocational degree (YH) in IT Project Management, then PSM I. Most recently I coordinated IAM, IGA, and identity security at Trafikförvaltningen, Region Stockholm — an environment where getting access wrong isn't a support ticket, it's a NIS2 question. The domain was new to me. The part where fifteen people want different things and someone has to make it add up was not.",
+        "In 2024 I retrained: a vocational degree (YH) in IT Project Management, then PSM I. At Trafikförvaltningen, Region Stockholm I coordinated IAM, IGA, and identity security — an environment where getting access wrong isn't a support ticket, it's a NIS2 question. The domain was new to me. The part where fifteen people want different things and someone has to make it add up was not.",
+      "about.bodyNow":
+        "Today I’m at Boliden as IT/OT Security Coordinator, working across smelters in several countries — Purdue-model zones, SCADA on one side of the boundary and IT on the other, with NIST CSF and NIS2 as the frame. Different industry, same shape of problem: a lot of parties who all need the same picture.",
       "about.body3":
         "That's the short version of why I work the way I do: I'd rather have the uncomfortable conversation early than manage a risk register full of things nobody wanted to say out loud.",
       "about.privacy":
@@ -283,6 +299,8 @@
       "skills.eyebrow": "Skills",
       "skills.heading": "Core competencies",
       "skills.sub": "A selection of what I work with day to day — from agile coordination to identity security.",
+      "skills.0.title": "IT/OT security & segmentation",
+      "skills.0.body": "Segmented zones along the Purdue model, the boundary between SCADA and IT, with NIST CSF and NIS2 as the governing frame.",
       "skills.1.title": "IAM, IGA & identity platforms",
       "skills.1.body": "Identity lifecycles and access governance across Entra ID, Active Directory, and Omada — human and non-human alike.",
       "skills.2.title": "IT project management & agile delivery",
@@ -298,7 +316,15 @@
 
       "exp.eyebrow": "Experience",
       "exp.heading": "Work experience",
-      "exp.sub": "From critical-infrastructure IAM coordination to delivery ownership for a 20-person consultant pool.",
+      "exp.sub": "From IT/OT security across smelters to IAM coordination in society-critical transport infrastructure.",
+      "exp.0.role": "IT/OT Security Coordinator",
+      "exp.0.company": "Boliden",
+      "exp.0.dates": "2026–present",
+      "exp.0.b1": "Coordinate IT/OT security across the group’s smelters, in close collaboration with five smelter managers",
+      "exp.0.b2": "Work with segmented zones and system segmentation along the Purdue model, across the boundary between SCADA/OT and IT",
+      "exp.0.b3": "Apply NIST CSF and NIS2 as the governing frameworks for security work across the business",
+      "exp.0.b4": "Hold broad international stakeholder contact across several countries — including suppliers and their own subcontractors",
+      "exp.0.b5": "Take part in IT and security initiatives across the entire business, with regular travel between sites in several countries",
       "exp.1.role": "IT Project Manager / IAM Coordinator",
       "exp.1.company": "Trafikförvaltningen, Region Stockholm",
       "exp.1.dates": "2025–2026",
@@ -385,13 +411,15 @@
 
       "tools.eyebrow": "Tools",
       "tools.heading": "Tools & methods",
-      "tools.group1": "IAM & infrastructure",
+      "tools.group1": "IAM, OT & infrastructure",
       "tools.group2": "Project & collaboration",
       "tools.group3": "Methods & ways of working",
       "tools.group4": "Strategy & business",
       "tools.group5": "AI & automation",
       "tools.showMore": "Show {n} more",
       "tools.showLess": "Show less",
+      "tools.chip.purdue": "Purdue model",
+      "tools.chip.segmentation": "Network segmentation",
       "tools.chip.agilewaterfall": "Agile & waterfall",
       "tools.chip.workshop": "Workshop facilitation",
       "tools.chip.agilecoach": "Agile coach",
@@ -500,7 +528,7 @@
     if (cvLink) {
       cvLink.setAttribute(
         "href",
-        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=5" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=5"
+        lang === "en" ? "assets/cv/CV_Ibrahim_Njie_EN.pdf?v=6" : "assets/cv/CV_Ibrahim_Njie_SV.pdf?v=6"
       );
     }
 
